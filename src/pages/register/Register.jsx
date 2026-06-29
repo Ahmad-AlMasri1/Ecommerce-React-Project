@@ -5,6 +5,7 @@ import axios from 'axios';
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { registerSchema } from '../../validations/RegisterSchema';
+import axiosInstance from '../../api/axiosInstance';
 export default function Register() {
 
 
@@ -16,7 +17,7 @@ export default function Register() {
           );
           const RegisterForm = async(data)=>{
             try{
-              const response = await axios.post(`${import.meta.env.VITE_BURL}/auth/Account/Register`,data)
+              const response = await axiosInstance.post(`/auth/Account/Register`,data)
             }catch(err){
               setServerErrors(err.response.data.errors)
             }
