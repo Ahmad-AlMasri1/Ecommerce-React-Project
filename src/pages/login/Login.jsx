@@ -6,8 +6,10 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { loginSchema } from '../../validations/LoginSchema';
 import axiosInstance from '../../api/axiosInstance';
-export default function Login() {
+import useAuthStore from '../../store/useAuthStore';
 
+export default function Login() {
+          const setToken = useAuthStore((state) => state.setToken);
 
           const[serverErrors,setServerErrors] = useState([]);
           const {register , handleSubmit , formState:{errors,isSubmitting} } = useForm(
@@ -18,7 +20,7 @@ export default function Login() {
           const LoginForm = async(data)=>{
             try{
               const response = await axiosInstance.post(`/auth/Account/Login`,data)
-              localStorage.setItem("accessToken",response.data.accessToken)
+              setToken(response.data.accessToken);
             }catch(err){
               setServerErrors(err.response.data.errors)
             }
