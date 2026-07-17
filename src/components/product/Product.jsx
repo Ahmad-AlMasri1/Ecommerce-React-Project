@@ -1,8 +1,8 @@
 import React from 'react'
-import useProducts from '../../hooks/useProducts'
-import { Box, Card, CardMedia, Typography , CardContent , Grid} from '@mui/material'
+import useProduct from '../../hooks/useProduct'
+import { Box, Card, CardMedia, Typography , CardContent , Grid, Link} from '@mui/material'
 export default function Product() {
-    const {data, isLoading, isError,error} = useProducts();
+    const {data, isLoading, isError,error} = useProduct();
     
     if(isLoading){
         return <h1>Loading...</h1>
@@ -33,7 +33,11 @@ export default function Product() {
                     <Typography component="h2" variant="h5">
                         {product.price}
                     </Typography>
-                 </CardContent>       
+                    <Link href={`/product/${product.id}`} underline="none" color="primary">
+                        View Details
+                    </Link>
+                </CardContent>
+                       
                 
             </Card>
             </Grid>
