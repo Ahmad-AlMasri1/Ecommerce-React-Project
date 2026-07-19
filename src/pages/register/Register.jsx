@@ -6,9 +6,10 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { registerSchema } from '../../validations/RegisterSchema';
 import axiosInstance from '../../api/axiosInstance';
+import { useNavigate } from 'react-router-dom';
 export default function Register() {
 
-
+          const navigate = useNavigate();
           const[serverErrors,setServerErrors] = useState([]);
           const {register , handleSubmit , formState:{errors,isSubmitting} } = useForm(
             {
@@ -17,7 +18,8 @@ export default function Register() {
           );
           const RegisterForm = async(data)=>{
             try{
-              const response = await axiosInstance.post(`/auth/Account/Register`,data)
+              const response = await axiosInstance.post(`/auth/Account/Register`,data);
+              navigate('/login');
             }catch(err){
               setServerErrors(err.response.data.errors)
             }

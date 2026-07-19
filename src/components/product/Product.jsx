@@ -3,14 +3,14 @@ import useProduct from '../../hooks/useProduct'
 import { Box, Card, CardMedia, Typography , CardContent , Grid, Link} from '@mui/material'
 export default function Product() {
     const {data, isLoading, isError,error} = useProduct();
-    
-    if(isLoading){
-        return <h1>Loading...</h1>
-    }
     if(isError){
         return <h1>{error.message}</h1>
     }
    
+    if(isLoading){
+        return <h1>Loading...</h1>
+    }
+    
   return (
     <Box  component="section">
         <Typography component="h1" variant="h3">

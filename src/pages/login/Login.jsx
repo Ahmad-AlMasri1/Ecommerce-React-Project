@@ -7,10 +7,10 @@ import * as yup from "yup"
 import { loginSchema } from '../../validations/LoginSchema';
 import axiosInstance from '../../api/axiosInstance';
 import useAuthStore from '../../store/useAuthStore';
-
+import { useNavigate } from 'react-router-dom';
 export default function Login() {
           const setToken = useAuthStore((state) => state.setToken);
-
+          const navigate = useNavigate();
           const[serverErrors,setServerErrors] = useState([]);
           const {register , handleSubmit , formState:{errors,isSubmitting} } = useForm(
             {
@@ -21,8 +21,9 @@ export default function Login() {
             try{
               const response = await axiosInstance.post(`/auth/Account/Login`,data)
               setToken(response.data.accessToken);
+              navigate('/');
             }catch(err){
-              setServerErrors(err.response.data.errors)
+              setServerErrors(err.response.data.message);
             }
           }
 
@@ -31,9 +32,9 @@ export default function Login() {
       <Typography component="h1" variant="h2">
           Login
       </Typography>
-      {serverErrors?.length > 0 ? serverErrors.map((error)=>
-      <Typography color="error">{error}</Typography>
-        )   :''}
+      {serverErrors?.length > 0 ? (
+        <Typography color="error">{serverErrors}</Typography>
+      ) : null}
       <Box onSubmit={handleSubmit(LoginForm)} component="form" sx={{marginTop:2 , display:'flex' , gap:4 , flexDirection:'column'}}>
          
           <TextField fullWidth {...register("Email")} label="Email" variant='outlined' error={errors.Email} helperText={errors.Email?.message}/>
