@@ -10,7 +10,6 @@ export default function Product() {
     if(isLoading){
         return <h1>Loading...</h1>
     }
-    
   return (
     <Box  component="section">
         <Typography component="h1" variant="h3">
