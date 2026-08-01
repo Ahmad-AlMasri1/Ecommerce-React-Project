@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React from 'react'
 import axiosInstance from '../api/axiosInstance';
+import i18n from '../i18next.jsx'
 export default function useProduct() {
   const getProduct = async()=>{
             const response = await axiosInstance.get(`/Products`)
