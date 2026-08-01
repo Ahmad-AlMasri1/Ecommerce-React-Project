@@ -16,7 +16,7 @@ export default function Product() {
             Products
         </Typography>
         <Grid container spacing={{xs:2,md:3}} sx={{textAlign:'center' , marginTop:2 , alignItems:'center' , justifyContent:'center'}}>
-        {data.response.data.map((product)=>(
+        {data?.response?.data?.map((product)=>(
             <Grid item size={{xs:12,sm:6,md:4}}>
             <Card >
                 <CardMedia

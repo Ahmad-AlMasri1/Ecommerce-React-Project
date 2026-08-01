@@ -9,7 +9,7 @@ export default function useProductDetails(id) {
         return response.data;
     }
     const query = useQuery({
-        querKey:['productDetails',i18n.language,id],
+        queryKey:['productDetails',i18n.language,id],
         queryFn:getProductDetails,
         staleTime:1000 *60 * 5
     })

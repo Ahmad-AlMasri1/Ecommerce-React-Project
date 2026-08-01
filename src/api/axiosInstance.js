@@ -5,7 +5,6 @@ const axiosInstance = axios.create({
     
 });
 axiosInstance.interceptors.request.use((config)=>{
-    console.log(config);
     config.headers["Accept-Language"]=i18n.language; 
     return config;
 })

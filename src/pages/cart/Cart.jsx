@@ -11,11 +11,12 @@ import useUpdateCartItem from '../../hooks/useUpdateCartItem';
 import IconButton from '@mui/material/IconButton';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
+import { useNavigate } from 'react-router-dom';
 export default function Cart() {
   const {mutate : updateItem , isPending: isUpdatePending} = useUpdateCartItem();
   const{data, isLoading, isError, error} = useCart();
   const {mutate : removeItem , isPending: isRemovePending} = useRemoveFromCart();
-  
+  const navigate = useNavigate();
   const handleUpdate = (productId, action) => {
     if (action === '+') {
       updateItem({ productId, count: data.items.find(item => item.productId === productId).count + 1 });
@@ -45,7 +46,8 @@ export default function Cart() {
 
         <Table>
           <TableHead>
-            <TableCell>
+            <TableRow>
+              <TableCell>
               Product Name
             </TableCell>
             <TableCell>
@@ -60,6 +62,7 @@ export default function Cart() {
             <TableCell>
               Actions
             </TableCell>
+            </TableRow>
           </TableHead>
 
           <TableBody>
@@ -90,6 +93,14 @@ export default function Cart() {
         </Table>
 
       </TableContainer>
+      <Box>
+        <Button variant="contained" onClick={() =>navigate('/checkout')}>
+          Proceed to Checkout
+        </Button>
+        <Button variant="outlined" onClick={() =>navigate('/')}>
+          Continue Shopping
+        </Button>
+      </Box>
     </Box>
   )
 }

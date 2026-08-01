@@ -8,6 +8,7 @@ import Cart from "./pages/cart/Cart";
 import Products from "./pages/products/Products";
 import ProductDetails from "./components/product/ProductDetails";
 import ProtectedRouter from "./components/protectedRouter/ProtectedRouter";
+import Checkout from "./pages/checkout/Checkout";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,6 +39,15 @@ const router = createBrowserRouter([
         {
             path:"register",
             element:<Register />
+        },
+        {
+            path:"checkout",
+            element:<ProtectedRouter><Checkout /></ProtectedRouter>
+        },
+        {
+            path:"checkout/cancel",
+            element:<ProtectedRouter><Checkout /></ProtectedRouter>
+            
         }
     ]
   },
