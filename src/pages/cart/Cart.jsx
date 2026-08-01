@@ -7,10 +7,27 @@ import { CircularProgress, TableBody, TableCell, TableContainer, Typography } fr
 import { Box, Table, TableHead, TableRow, Button } from '@mui/material';
 import useAddToCart from '../../hooks/useAddToCart';
 import useRemoveFromCart from '../../hooks/useRemoveFromCart';
+import useUpdateCartItem from '../../hooks/useUpdateCartItem';
+import IconButton from '@mui/material/IconButton';
+import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material/Add';
 export default function Cart() {
-  
+  const {mutate : updateItem , isPending: isUpdatePending} = useUpdateCartItem();
   const{data, isLoading, isError, error} = useCart();
-  const {mutate : removeItem , isPending} = useRemoveFromCart();
+  const {mutate : removeItem , isPending: isRemovePending} = useRemoveFromCart();
+  
+  const handleUpdate = (productId, action) => {
+    if (action === '+') {
+      updateItem({ productId, count: data.items.find(item => item.productId === productId).count + 1 });
+    } else if (action === '-') {
+      const currentCount = data.items.find(item => item.productId === productId).count;
+      if (currentCount > 1) {
+        updateItem({ productId, count: currentCount - 1 });
+      } else {
+        removeItem(productId);
+      }
+    }
+  };
   if(isLoading){
     return <CircularProgress/>
   }
@@ -49,10 +66,21 @@ export default function Cart() {
             {data.items.map((item)=><TableRow key={item.id}>
               <TableCell>{item.productName}</TableCell>
               <TableCell>{item.price}$</TableCell>
-              <TableCell>{item.count}</TableCell>
+
+              <TableCell>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <IconButton disabled={isUpdatePending} >
+                    <AddIcon onClick={() => handleUpdate( item.productId,'+' )}/>
+                  </IconButton>
+                  {item.count}
+                  <IconButton disabled={isUpdatePending}>
+                    <RemoveIcon onClick={() => handleUpdate( item.productId,'-' )}/>
+                  </IconButton>
+                </Box>
+              </TableCell>
               <TableCell>{(item.price * item.count)}$</TableCell>
               <TableCell>
-                <Button variant="contained" color="error" disabled={isPending} onClick={() => removeItem(item.productId)}>
+                <Button variant="contained" color="error" disabled={isRemovePending} onClick={() => removeItem(item.productId)}>
                   Remove
                 </Button>
               </TableCell>
