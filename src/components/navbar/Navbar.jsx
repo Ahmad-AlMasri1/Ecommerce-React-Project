@@ -4,11 +4,14 @@ import useAuthStore from '../../store/useAuthStore'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18next.jsx'
+import { Button } from '@mui/material'
+import useThemeStore from '../../store/useThemeStore'
 export default function Navbar() {
   const changeLanguage = () => {
     const lan=i18n.language === 'en' ? 'ar' : 'en';
     i18n.changeLanguage(lan);
   }
+  const {mode, toggleMode} = useThemeStore();
   const { t } = useTranslation();
   const navigate = useNavigate();
   const token = useAuthStore((state) => state.token);
@@ -37,9 +40,12 @@ export default function Navbar() {
           
         </>
       )}
-      <button onClick={changeLanguage}>
+      <Button onClick={changeLanguage}>
         {i18n.language === 'en' ? 'Ar' : 'En'}
-      </button>
+      </Button>
+      <Button onClick={toggleMode} variant="outlined" >
+        {mode === 'light' ? 'Dark Mode' : 'Light Mode'}
+      </Button>
     </nav>
   )
 }
