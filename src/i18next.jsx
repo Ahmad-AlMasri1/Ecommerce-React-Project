@@ -21,6 +21,7 @@ i18n
             "Register": "Register",
             "Categories": "Categories",
             "Products": "Products",
+            "Profile": "Profile",
             }
         },
         ar: {
@@ -33,6 +34,7 @@ i18n
             "Register": "تسجيل جديد",
             "Categories": "الفئات",
             "Products": "المنتجات",
+            "Profile": "الملف الشخصي",
             }
         }
     },

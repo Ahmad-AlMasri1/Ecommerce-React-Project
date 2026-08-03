@@ -9,6 +9,9 @@ import Products from "./pages/products/Products";
 import ProductDetails from "./components/product/ProductDetails";
 import ProtectedRouter from "./components/protectedRouter/ProtectedRouter";
 import Checkout from "./pages/checkout/Checkout";
+import ProfileLayout from "./pages/profile/ProfileLayout";
+import ProfileInfo from "./pages/profile/ProfileInfo";
+import ProfileOrders from "./pages/profile/ProfileOrders";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -45,10 +48,20 @@ const router = createBrowserRouter([
             element:<ProtectedRouter><Checkout /></ProtectedRouter>
         },
         {
-            path:"checkout/cancel",
-            element:<ProtectedRouter><Checkout /></ProtectedRouter>
-            
+            path:"profile",
+            element:<ProtectedRouter><ProfileLayout /></ProtectedRouter>,
+            children:[
+                {
+                    index:true,
+                    element:<ProfileInfo />
+                },
+                {
+                    path:"orders",
+                    element:<ProfileOrders />
+                }
+            ]
         }
+        
     ]
   },
 ]);

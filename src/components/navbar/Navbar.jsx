@@ -24,6 +24,7 @@ export default function Navbar() {
       {token ? (
         <> 
           <Link to="/cart">{t('Cart')}</Link>
+          <Link to="/profile">{t('Profile')}</Link>
           <Link to="/login" onClick={handleLogout} component="button">
             {t('Logout')}
           </Link>
