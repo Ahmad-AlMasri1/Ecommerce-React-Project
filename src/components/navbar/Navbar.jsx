@@ -43,7 +43,11 @@ export default function Navbar() {
       <Button onClick={changeLanguage}>
         {i18n.language === 'en' ? 'Ar' : 'En'}
       </Button>
-      <Button onClick={toggleMode} variant="outlined" >
+      <Button onClick={() => {
+        localStorage.setItem('mode', mode === 'light' ? 'dark' : 'light');
+        toggleMode()
+
+      }} variant="outlined" >
         {mode === 'light' ? 'Dark Mode' : 'Light Mode'}
       </Button>
     </nav>
