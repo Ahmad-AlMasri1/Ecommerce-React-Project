@@ -33,6 +33,10 @@ i18n
             "Upgrade Your Lifestyle":"Upgrade Your Lifestyle",
             "Discover our new collection of premium essentials designed for the modern individual.":"Discover our new collection of premium essentials designed for the modern individual.",
             "Shop Now":"Shop Now",
+            "Explore Categories":"Explore Categories",
+            "Electronics":"Electronics",
+            "Clothes":"Clothes",
+            "Mobiles":"Mobiles",
             }
         },
         ar: {
@@ -57,6 +61,10 @@ i18n
             "Upgrade Your Lifestyle":"إرتقي في نمط حياتك",
             "Discover our new collection of premium essentials designed for the modern individual.":"اكتشف مجموعتنا الجديدة من المنتجات الأساسية الفاخرة المصممة للفرد العصري.",
             "Shop Now":"تسوق الآن",
+            "Explore Categories":"استكشف الفئات",
+            "Electronics":"Electronics",
+            "Clothes":"ملابس",
+            "Mobiles":"هواتف",
             }
         }
     },
