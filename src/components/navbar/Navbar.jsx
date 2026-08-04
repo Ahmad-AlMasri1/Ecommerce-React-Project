@@ -36,6 +36,7 @@ export default function Navbar() {
     navigate('/login');
   }
   return (
+    <Box sx={{position:'sticky',top:0,zIndex:100,}}>
     <Box   sx={{flexGrow:1, display: 'flex', justifyContent: 'space-between', alignItems: 'center',mx:'auto', py:'10px',px:10, backgroundColor: mode === 'light' ? '#F4F2FC' : 'black', color: mode === 'light' ? '#000' : '#fff' }}>
       <IconButton onClick={anchor === null ? openMenu : closeMenu} sx={{display: {xs: 'flex', sm:'none'},}}>
         <MenuOutlinedIcon />
@@ -206,6 +207,6 @@ export default function Navbar() {
       
       
       </Box>
-    </Box>
+    </Box></Box>
   )
 }
