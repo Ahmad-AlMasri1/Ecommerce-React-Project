@@ -22,6 +22,10 @@ i18n
             "Categories": "Categories",
             "Products": "Products",
             "Profile": "Profile",
+            "Dark Mode": "Dark Mode",
+            "Light Mode": "Light Mode",
+            "AR":"AR",
+            "EN":"EN",
             }
         },
         ar: {
@@ -35,6 +39,10 @@ i18n
             "Categories": "الفئات",
             "Products": "المنتجات",
             "Profile": "الملف الشخصي",
+            "Dark Mode": "الوضع المظلم",
+            "Light Mode": "الوضع المضيء",
+            "AR":"العربية",
+            "EN":"الإنجليزية",
             }
         }
     },
