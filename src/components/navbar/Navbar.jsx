@@ -36,7 +36,7 @@ export default function Navbar() {
     navigate('/login');
   }
   return (
-    <Box   sx={{flexGrow:1, display: 'flex', justifyContent: 'space-between', alignItems: 'center',mx:'auto', py:'10px',px:10, backgroundColor: mode === 'light' ? '#ffff' : 'black', color: mode === 'light' ? '#000' : '#fff' }}>
+    <Box   sx={{flexGrow:1, display: 'flex', justifyContent: 'space-between', alignItems: 'center',mx:'auto', py:'10px',px:10, backgroundColor: mode === 'light' ? '#F4F2FC' : 'black', color: mode === 'light' ? '#000' : '#fff' }}>
       <IconButton onClick={anchor === null ? openMenu : closeMenu} sx={{display: {xs: 'flex', sm:'none'},}}>
         <MenuOutlinedIcon />
         <Menu open={Boolean(anchor)} keepMounted anchorEl={anchor} onClose={closeMenu} sx={{display:'flex'}}> 
@@ -55,7 +55,7 @@ export default function Navbar() {
           }}
          >{t('Home')}</Button></MenuItem>
          <MenuItem
-         sx={{p:0,}}><Button fullWidth href='/products'  variant="none" color='primary' sx={{
+         sx={{p:0,}}><Button fullWidth href='/products'  variant="none"  sx={{
     
             display: 'flex',
         justifyContent:'center',        
@@ -67,7 +67,7 @@ export default function Navbar() {
          },
             }} >{t('Products')}</Button></MenuItem>
         <MenuItem
-        sx={{p:0,}}><Button fullWidth variant='none'
+        sx={{p:0,}}><Button fullWidth variant='none' 
         href='/profile'
          sx={{ 
           display: 'flex',
@@ -82,7 +82,7 @@ export default function Navbar() {
          >{t('Profile')}</Button></MenuItem>
         <MenuItem
         sx={{p:0,}}>
-        <Button fullWidth sx={{
+        <Button  fullWidth sx={{
         display: 'flex',
         justifyContent:'center',
                  
@@ -99,7 +99,7 @@ export default function Navbar() {
       }} variant='none' >
         {mode === 'light' ? t('Dark Mode'): t('Light Mode')}
       </Button></MenuItem>
-        <MenuItem sx={{p:0,}}> <Button onClick={changeLanguage} aria-label="change language" variant='none' fullWidth sx={{ 
+        <MenuItem sx={{p:0,}}> <Button  onClick={changeLanguage} aria-label="change language" variant='none' fullWidth sx={{ 
         display: 'flex',
         justifyContent:'center',        
           fontWeight: 400,
@@ -125,7 +125,7 @@ export default function Navbar() {
         alignItems: 'center',
         gap: 2,
       }}>
-        <Button href='/'  variant="none" color='primary' sx={{
+        <Button href='/'  variant="none"  sx={{
    
     minWidth: 'auto',
     px: 0,
@@ -142,7 +142,7 @@ export default function Navbar() {
       backgroundColor: 'transparent',
     },
   }}>{t('Home')}</Button>
-        <Button href='/products'  variant="none" color='primary' sx={{
+        <Button href='/products'  variant="none"  sx={{
     
     minWidth: 'auto',
     px: 0,

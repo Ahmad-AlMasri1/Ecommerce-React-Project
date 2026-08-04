@@ -9,7 +9,7 @@ const getTheme = (mode) => createTheme({
         palette: {
             mode: mode,
             primary: {
-                main: mode === 'light' ? '#1A1B22' :  '#dedede',
+                main: mode === 'light' ? '#454652' :  '#dedede',
                 
             },
         },

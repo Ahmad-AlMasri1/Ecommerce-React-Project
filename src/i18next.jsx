@@ -26,6 +26,10 @@ i18n
             "Light Mode": "Light Mode",
             "AR":"AR",
             "EN":"EN",
+            "© 2024 ShopModern. All rights reserved.":"© 2024 ShopModern. All rights reserved.",
+            "Privacy Policy":"Privacy Policy",
+            "Terms of Service":"Terms of Service",
+            "Help Center":"Help Center",
             }
         },
         ar: {
@@ -43,6 +47,10 @@ i18n
             "Light Mode": "الوضع المضيء",
             "AR":"العربية",
             "EN":"الإنجليزية",
+            "© 2024 ShopModern. All rights reserved.":"© 2024 شوب مودرن. جميع الحقوق محفوظة.",
+            "Privacy Policy":"سياسة الخصوصية",
+            "Terms of Service":"شروط الخدمة",
+            "Help Center":"مركز المساعدة",
             }
         }
     },
