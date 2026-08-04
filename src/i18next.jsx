@@ -30,6 +30,9 @@ i18n
             "Privacy Policy":"Privacy Policy",
             "Terms of Service":"Terms of Service",
             "Help Center":"Help Center",
+            "Upgrade Your Lifestyle":"Upgrade Your Lifestyle",
+            "Discover our new collection of premium essentials designed for the modern individual.":"Discover our new collection of premium essentials designed for the modern individual.",
+            "Shop Now":"Shop Now",
             }
         },
         ar: {
@@ -51,6 +54,9 @@ i18n
             "Privacy Policy":"سياسة الخصوصية",
             "Terms of Service":"شروط الخدمة",
             "Help Center":"مركز المساعدة",
+            "Upgrade Your Lifestyle":"إرتقي في نمط حياتك",
+            "Discover our new collection of premium essentials designed for the modern individual.":"اكتشف مجموعتنا الجديدة من المنتجات الأساسية الفاخرة المصممة للفرد العصري.",
+            "Shop Now":"تسوق الآن",
             }
         }
     },

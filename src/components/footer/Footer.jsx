@@ -7,11 +7,7 @@ export default function Footer() {
   const { t } = useTranslation();
   return (
     <Box sx={{
-    position: 'fixed',
-    
-    bottom: 0,
-    left: 0,
-    right: 0,
+    flexShrink:0,
    backgroundColor: mode === 'light' ? '#F4F2FC' : 'black', color: mode === 'light' ? '#000' : '#fff',
     textAlign: 'center',
     py: 2,
