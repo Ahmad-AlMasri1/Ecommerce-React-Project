@@ -37,6 +37,12 @@ i18n
             "Electronics":"Electronics",
             "Clothes":"Clothes",
             "Mobiles":"Mobiles",
+            "Free Shipping":"Free Shipping",
+            "Secure Payment":"Secure Payment",
+            "24/7 Support":"24/7 Support",
+            "On all orders over $100":"On all orders over $100",
+            "100% secure checkout":"100% secure checkout",
+            "Dedicated customer service":"Dedicated customer service",
             }
         },
         ar: {
@@ -65,6 +71,12 @@ i18n
             "Electronics":"Electronics",
             "Clothes":"ملابس",
             "Mobiles":"هواتف",
+            "Free Shipping":"ًالشحن مجانا",
+            "Secure Payment":"الدفع الآمن",
+            "24/7 Support":"دعم متوفر 24/7",
+            "On all orders over $100":"على جميع الطلبات التي تزيد قيمتها عن 100$",
+            "100% secure checkout":"عملية دفع آمنة بنسبة 100%",
+            "Dedicated customer service":"خدمة عملاء مخصصة",
             }
         }
     },

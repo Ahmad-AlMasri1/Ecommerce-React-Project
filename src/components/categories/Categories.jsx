@@ -28,6 +28,7 @@ export default function Categories() {
                         backgroundRepeat: 'no-repeat',
                         borderRadius:3.5,
                         minHeight: '45vh',
+                        boxShadow:4,
                         '&:hover':{
                             transform:'scale(1.05)',
                             transition:'transform 0.7s ease-in-out',
@@ -45,6 +46,7 @@ export default function Categories() {
                         backgroundRepeat: 'no-repeat',
                         borderRadius:3.5,
                         minHeight: '22.5vh',
+                        boxShadow:4,
                         '&:hover':{
                             transform:'scale(1.1)',
                             transition:'transform 0.7s ease-in-out',
@@ -61,6 +63,7 @@ export default function Categories() {
                         backgroundRepeat: 'no-repeat',
                         borderRadius:3.5,
                         minHeight: '22.5vh',
+                        boxShadow:4,
                         '&:hover':{
                             transform:'scale(1.1)',
                             transition:'transform 0.7s ease-in-out',
