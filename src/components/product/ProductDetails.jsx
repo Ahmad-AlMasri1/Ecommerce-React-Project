@@ -17,9 +17,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm , Controller} from 'react-hook-form';
 import axiosInstance from '../../api/axiosInstance';
 import authAxiosInstance from '../../api/authAxiosInstance';
+import { useTranslation } from 'react-i18next';
 export default function ProductDetails() {
   const setToken = useAuthStore((state) => state.setToken);
   const [cnt,setCnt]=useState(1);
+      const { t } = useTranslation();
     const {mutate : addToCart} = useAddToCart();
     const {id} = useParams();
     const {data,isLoading,isError,error} = useProductDetails(id);
@@ -89,7 +91,7 @@ export default function ProductDetails() {
             precision={0.5}
             emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
           />
-            <Typography color='primary'> ({data.response.reviews.length} Reviews) </Typography>
+            <Typography color='primary'> ({data.response.reviews.length} {t('Reviews')}) </Typography>
           </Box>
           <Typography  sx={{color:(mode === 'dark' ? '#24389C' : '#24389C') , fontSize:'24px', fontWeight:500 }}>${data.response.price}</Typography>
           <Typography sx={{fontSize:{xs:'10px',md:'15px',lg:'20px'}}}>{data.response.description}</Typography>
@@ -103,15 +105,15 @@ export default function ProductDetails() {
                     <AddIcon onClick={() => handleUpdate( cnt,'+' )} />
                   </IconButton>
             </Box>        
-          <IconButton sx={{display:'flex' ,alignItems:'center' ,justifyContent:'center', gap:1 , py:2 , backgroundColor:'#FDC003', color:'#6C5000', borderRadius:0.5 ,width:{xs:'40%' ,sm:'50%'},fontSize:{xs:'15px',md:'25px'}}} onClick={() => {addToCart({ productId: data.response.id , count: cnt })}}><ShoppingBagOutlinedIcon/> Add to Cart</IconButton>
+          <IconButton sx={{display:'flex' ,alignItems:'center' ,justifyContent:'center', gap:1 , py:2 , backgroundColor:'#FDC003', color:'#6C5000', borderRadius:0.5 ,width:{xs:'40%' ,sm:'50%'},fontSize:{xs:'15px',md:'25px'}}} onClick={() => {addToCart({ productId: data.response.id , count: cnt })}}><ShoppingBagOutlinedIcon/> {t('Add to Cart')}</IconButton>
           </Box>
         </Box>
       </Box>
       
       <Box sx={{py:4 , display:'flex' , flexDirection:'column' , gap:2}}>
-        <Typography variant='h4'>Add Review</Typography>
+        <Typography variant='h4'>{t('Add Review')}</Typography>
           <Box onSubmit={handleSubmit(ReviewForm)} component="form" sx={{display:'flex' , flexDirection:'column' , gap:2 , borderRadius:3 , boxShadow:3 , p:4}}>
-            <Typography>Your Rating</Typography>
+            <Typography>{t('Your Rating')}</Typography>
               <Controller
                 name="Rating"
                 control={control}
@@ -126,7 +128,7 @@ export default function ProductDetails() {
                 
               <TextField
               {...register("Comment")}
-          label="Share your experience..."
+          label={t('Share your experience...')}
           multiline
           rows={4}
           value={Comment}
@@ -136,13 +138,13 @@ export default function ProductDetails() {
         />
        <Typography color='error' variant='h5'>{serverErrors}</Typography> 
         <Button variant="contained" type="submit" disabled={isSubmitting} sx={{borderRadius:1 , backgroundColor:'#24389C'}}>
-                    Submit Review
+                    {t('Submit Review')}
         </Button>
           </Box>
           
       </Box>
       <Box>
-        <Typography variant='h4'>Customer Reviews</Typography>
+        <Typography variant='h4'>{t('Customer Reviews')}</Typography>
         <Box sx={{display:'flex', gap:1 , mb:3}}>
             <Rating
             name="text-feedback"
@@ -151,7 +153,7 @@ export default function ProductDetails() {
             precision={0.5}
             emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
           />
-            <Typography color='primary'> ({data.response.reviews.length} Reviews) </Typography>
+            <Typography color='primary'> ({data.response.reviews.length}{t('Reviews')}) </Typography>
           </Box>
       <Grid container spacing={3}>
          {data.response.reviews.map((review)=>

@@ -43,6 +43,14 @@ i18n
             "On all orders over $100":"On all orders over $100",
             "100% secure checkout":"100% secure checkout",
             "Dedicated customer service":"Dedicated customer service",
+            "Reviews":"Reviews",
+            "Add to Cart":"Add to Cart",
+            "Add Review":"Add Review",
+            "Your Rating":"Your Rating",
+            "Share your experience...":"Share your experience...",
+            "Customer Reviews":"Customer Reviews",
+            "Submit Review":"Submit Review",
+            
             }
         },
         ar: {
@@ -77,6 +85,14 @@ i18n
             "On all orders over $100":"على جميع الطلبات التي تزيد قيمتها عن 100$",
             "100% secure checkout":"عملية دفع آمنة بنسبة 100%",
             "Dedicated customer service":"خدمة عملاء مخصصة",
+            "Reviews":"تقييم",
+            "Add to Cart":"أضف إلى السلة",
+            "Add Review":"أضف تقييمًا",
+            "Your Rating":"تقييمك",
+            "Share your experience...":"شارك تجربتك...",
+            "Customer Reviews":"آراء العملاء",
+            "Submit Review":"إرسال تقييم",
+            
             }
         }
     },

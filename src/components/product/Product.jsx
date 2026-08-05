@@ -44,7 +44,7 @@ export default function Product() {
                 >
                 </CardMedia>
                 <CardContent sx={{display:"flex", flexDirection:"column" , alignItems:"start" ,backgroundColor: mode === 'light' ? '#F4F2FC' : 'black', color: mode === 'light' ? '#000' : '#fff',}}>
-                    <Typography component="h2" sx={{fontSize:"16px",mb:4}} color='primary'>
+                    <Typography component="h2" sx={{fontSize:{xs:"13px",sm:"16px"},mb:4}} color='primary' noWrap >
                         {product.name}
                     </Typography>
                     <Typography component="h2"  sx={{color:(mode === 'dark' ? '#24389C' : '#24389C')}}>
