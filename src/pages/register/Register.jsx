@@ -13,10 +13,14 @@ import CardContent from '@mui/material/CardContent';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+import useThemeStore from '../../store/useThemeStore';
+import i18n from '../../i18next';
 export default function Register() {
           const { t } = useTranslation();
           const navigate = useNavigate();
           const[serverErrors,setServerErrors] = useState([]);
+          const {mode, toggleMode} = useThemeStore();
           const {register , handleSubmit , formState:{errors,isSubmitting} } = useForm(
             {
               resolver:yupResolver(registerSchema)
@@ -34,7 +38,7 @@ export default function Register() {
   return (
     
     <Box component="section" >
-      <Container maxWidth="sm" sx={{height:'100vh',display:'flex' , flexDirection:'column',}}> 
+      <Container maxWidth="sm" sx={{height:'100vh' , mt:10}}> 
     <Card component="section" sx={{margin:'auto 0' , py:5}}>
       <CardContent sx={{display:'flex' , flexDirection:'column' ,alignItems:'center' , justifyContent:'space-between', gap:2 ,}}>
         <svg width="180px" height="42px" viewBox="0 0 111 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,13 +50,13 @@ export default function Register() {
           <TextField fullWidth {...register("Password")} label={t("Password")} variant='outlined' error={errors.Password} helperText={errors.Password?.message}/>
           <TextField fullWidth {...register("FullName")} label={t("FullName")} variant='outlined' error={errors.FullName} helperText={errors.FullName?.message}/>
           <TextField fullWidth {...register("PhoneNumber")} label={t("PhoneNumber")} variant='outlined' error={errors.PhoneNumber} helperText={errors.PhoneNumber?.message}/>
-      <Link ><Typography color='primary'>{t('Forgot password?')}</Typography></Link>
+      <Link to="/forgot" ><Typography color='primary'>{t('Forgot password?')}</Typography></Link>
       {serverErrors?.length > 0 ? serverErrors.map((error)=>
       <Typography color="error">{error}</Typography>
         )   :''}
       <Box onSubmit={handleSubmit(RegisterForm)} component="form" sx={{marginTop:2 , display:'flex' , gap:4 , flexDirection:'column'}}>
           <Button variant="contained" type="submit" disabled={isSubmitting} sx={{backgroundColor:'#24389C', textTransform:'none' , py:1.5 , px:10 , fontSize:'16px'}}>
-            {t('Register')} <ArrowForwardIcon/>
+            {t('Register')} {i18n.language === 'ar' ? <ArrowBackOutlinedIcon /> : <ArrowForwardIcon/>}
           </Button>
       </Box>
       <Box sx={{display:'flex', gap:1}}>

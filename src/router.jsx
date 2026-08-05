@@ -12,6 +12,9 @@ import Checkout from "./pages/checkout/Checkout";
 import ProfileLayout from "./pages/profile/ProfileLayout";
 import ProfileInfo from "./pages/profile/ProfileInfo";
 import ProfileOrders from "./pages/profile/ProfileOrders";
+import ForgotPassword from "./pages/forgotPassowrd/ForgotPassword";
+import ResetPassword from "./pages/resetPassword/ResetPassword";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -60,6 +63,14 @@ const router = createBrowserRouter([
                     element:<ProfileOrders />
                 }
             ]
+        }
+        ,{
+            path:"forgot",
+            element:<ForgotPassword />
+        }
+        ,{
+            path:"reset",
+            element:<ResetPassword />
         }
         
     ]
