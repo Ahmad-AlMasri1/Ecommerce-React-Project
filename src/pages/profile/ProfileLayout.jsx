@@ -13,19 +13,20 @@ export default function ProfileLayout() {
   const {t} = useTranslation();
   const Logout = useAuthStore((state) => state.Logout);
   return (
-    <Container sx={{pt:5 , display:'flex' , gap:5 , minHeight:'90vh'}}>
-      <Box sx={{display:'flex' , flexDirection:'column', gap:4 , width:'100'}}>
+    <Container sx={{pt:5 , display:'flex' , gap:5 , minHeight:'89vh' , flexDirection:{xs:'column',md:'row'}}}>
+      <Box sx={{display:'flex' , flexDirection:'column', gap:4 , width:'100', }}>
         <Box sx={{borderRadius:2 , backgroundColor:'#CACFFF' , pb:3,pt:2 , px:3 , display:'flex' , flexDirection:'column', boxShadow:4}}>
-          <Typography sx={{color:'#1A1B22' , fontSize:'20px' , fontWeight:500}}>{data.fullName}</Typography>
-          <Typography  sx={{color:'#454652'}}>{data.email}</Typography>
+          <Typography sx={{color:'#1A1B22' , fontSize:'20px' , fontWeight:500}}>{data?.fullName}</Typography>
+          <Typography  sx={{color:'#454652'}}>{data?.email}</Typography>
         </Box>
+        <Box sx={{display:'flex' , flexDirection:{xs:'row',md:'column'} , gap:2}}>
       <Button 
         variant='outlined'
         sx={{
           boxShadow:2,
           display:'flex',
           gap:1,
-          justifyContent:'start',
+          justifyContent:{md:'start'},
           py:1.5,
           px:5,
           '&:hover':{
@@ -35,7 +36,8 @@ export default function ProfileLayout() {
         }}
       component={Link} to="">
         <PersonIcon/>
-        {t('Personal Info')}
+        <Typography sx={{fontSize:{xs:'10px', md:'16px'}}}>{t('Personal Info')}</Typography>
+        
       </Button>
       <Button 
       variant='outlined'
@@ -43,7 +45,7 @@ export default function ProfileLayout() {
           boxShadow:2,
           display:'flex',
           gap:1,
-          justifyContent:'start',
+          justifyContent:{md:'start'},
           py:1.5,
           px:5,
           '&:hover':{
@@ -52,7 +54,7 @@ export default function ProfileLayout() {
           }
         }} component={Link}   to="orders">
          <ReceiptLongOutlinedIcon/> 
-        {t('Order History')}
+         <Typography sx={{fontSize:{xs:'10px', md:'16px'}}}>{t('Order History')}</Typography>
       </Button>
       <Button 
       onClick={Logout}
@@ -61,7 +63,7 @@ export default function ProfileLayout() {
           boxShadow:2,
           display:'flex',
           gap:1,
-          justifyContent:'start',
+          justifyContent:{md:'start'},
           py:1.5,
           px:5,
           '&:hover':{
@@ -70,8 +72,8 @@ export default function ProfileLayout() {
           }
         }} component={Link}   to="/login">
           <LogoutOutlinedIcon />
-        {t('Sign Out')}
-      </Button>
+        <Typography sx={{fontSize:{xs:'10px', md:'16px'}}}>{t('Sign Out')}</Typography>
+      </Button></Box>
       </Box>
       <Box>
         <Outlet />

@@ -83,6 +83,16 @@ i18n
             "Min Price":"Min Price",
             "Price Range":"Price Range",
             "Apply Filters":"Apply Filters",
+            "Personal Info":"Personal Info",
+            "Order History":"Order History",
+            "Sign Out":"Sign Out",
+            "Personal Information":"Personal Information",
+            "Full Name":"Full Name",
+            "Phone Number":"Phone Number",
+            "Id":"Id",
+            "Amount Paid":"Amount Paid",
+            "Status":"Status",
+            "Order Date":"Order Date",
             }
         },
         ar: {
@@ -157,6 +167,16 @@ i18n
             "Min Price":"أدنى سعر",
             "Price Range":"نطاق السعر",
             "Apply Filters":"تطبيق الفلاتر",
+            "Personal Info":"المعلومات الشخصية",
+            "Order History":"سجل الطلبات",
+            "Sign Out":"تسجيل الخروج",
+            "Personal Information":"المعلومات الشخصية",
+            "Full Name":"الاسم الكامل",
+            "Phone Number":"رقم الهاتف",
+            "Id":"الهوية",
+            "Amount Paid":"المبلغ المدفوع",
+            "Status":"الحالة",
+            "Order Date":"تاريخ الطلب",
             
             }
         }
