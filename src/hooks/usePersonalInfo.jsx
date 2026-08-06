@@ -3,14 +3,20 @@ import { useQuery } from '@tanstack/react-query';
 import authAxiosInstance from '../api/authAxiosInstance';
 import axiosInstance from '../api/axiosInstance.js';
 import i18n from '../i18next.jsx'
-export default function useCart() {
+import { Typography } from '@mui/material';
+export default function usePersonalInfo() {
+    
     const getItems = async ()=>{
-        const response = await authAxiosInstance.get(`/Carts`);
+        try{
+        const response = await authAxiosInstance.get(`/Profile`);
         return response.data;
+        }catch(error){
+            return <Typography color='error'>{error}</Typography>
+        }
     }
 
     const query = useQuery({
-        queryKey: ['cart', i18n.language],
+        queryKey: ['info'],
         queryFn: getItems,
         staleTime: 1000 * 60 * 5,
     })

@@ -30,6 +30,7 @@ export default function Register() {
             try{
               const response = await axiosInstance.post(`/auth/Account/Register`,data);
               navigate('/login');
+              
             }catch(err){
               setServerErrors(err.response.data.errors)
             }

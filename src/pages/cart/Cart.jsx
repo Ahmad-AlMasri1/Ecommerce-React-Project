@@ -64,7 +64,6 @@ export default function Cart() {
             </TableCell>
             </TableRow>
           </TableHead>
-
           <TableBody>
             {data.items.map((item)=><TableRow key={item.id}>
               <TableCell>{item.productName}</TableCell>

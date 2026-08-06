@@ -17,7 +17,7 @@ export default function Home() {
     <Typography variant='h2' color='primary' sx={{fontSize:'35px' , pb:3}}>
             Featured Products
     </Typography>
-    <Product/>
+    <Product sortBy={'name'}  order={'true'}  min={''}  max={''}/>
     </Container>
     </Box>
     <OurFeatures/>

@@ -12,7 +12,7 @@ import useThemeStore from './store/useThemeStore'
 import getTheme from './theme.jsx'
 export default function App() {
   const {i18n} = useTranslation();
-
+  
   useEffect(() => {
     const direction = i18n.language === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.dir = direction;

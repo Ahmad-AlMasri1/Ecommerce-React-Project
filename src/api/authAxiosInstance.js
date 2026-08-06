@@ -4,7 +4,8 @@ import i18n from "../i18next.jsx";
 const token = useAuthStore.getState().token;
 const authAxiosInstance = axios.create({
     baseURL:`${import.meta.env.VITE_BURL}`,
-    headers:{       "Authorization":`Bearer ${token}`,
+    headers:{       
+        "Authorization":`Bearer ${token}`,
         "Accept-Language":i18n.language,
     }
 });
