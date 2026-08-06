@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { get } from 'react-hook-form';
 import authAxiosInstance from '../../api/authAxiosInstance';
 import useCart from '../../hooks/useCart';
-import { CircularProgress, TableBody, TableCell, TableContainer, Typography } from '@mui/material';
+import { CircularProgress, Container, TableBody, TableCell, TableContainer, Typography } from '@mui/material';
 import { Box, Table, TableHead, TableRow, Button } from '@mui/material';
 import useAddToCart from '../../hooks/useAddToCart';
 import useRemoveFromCart from '../../hooks/useRemoveFromCart';
@@ -12,11 +12,14 @@ import IconButton from '@mui/material/IconButton';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import { useNavigate } from 'react-router-dom';
+import useThemeStore from '../../store/useThemeStore';
+import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 export default function Cart() {
   const {mutate : updateItem , isPending: isUpdatePending} = useUpdateCartItem();
   const{data, isLoading, isError, error} = useCart();
   const {mutate : removeItem , isPending: isRemovePending} = useRemoveFromCart();
   const navigate = useNavigate();
+  const {mode, toggleMode} = useThemeStore();
   const handleUpdate = (productId, action) => {
     if (action === '+') {
       updateItem({ productId, count: data.items.find(item => item.productId === productId).count + 1 });
@@ -35,71 +38,76 @@ export default function Cart() {
   if(isError){
     return <div>Error: {error.message}</div>
   }
-  
+  console.log(data);
 
   return (
-    <Box component="section">
+    <Container sx={{py:4,minHeight:'100vh'}}>
       <Typography component="h1" variant="h3">
         Cart
       </Typography>
-      <TableContainer>
+            {data.items.map((item)=><Box key={item.id} sx={{my:3, }}>
+              
 
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>
-              Product Name
-            </TableCell>
-            <TableCell>
-              Price
-            </TableCell>
-            <TableCell>
-              Quantity
-            </TableCell>
-            <TableCell>
-              Total
-            </TableCell>
-            <TableCell>
-              Actions
-            </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {data.items.map((item)=><TableRow key={item.id}>
-              <TableCell>{item.productName}</TableCell>
-              <TableCell>{item.price}$</TableCell>
-
-              <TableCell>
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <IconButton disabled={isUpdatePending} >
-                    <AddIcon onClick={() => handleUpdate( item.productId,'+' )}/>
-                  </IconButton>
-                  {item.count}
-                  <IconButton disabled={isUpdatePending}>
-                    <RemoveIcon onClick={() => handleUpdate( item.productId,'-' )}/>
-                  </IconButton>
+                <Box sx={{backgroundColor: mode === 'light' ? '#F4F2FC' : '#1A1B22' ,display:'flex' , flexDirection:'column' , borderRadius:1 , p:2,gap:3,boxShadow:5, border:'1px solid #C5C5D4'}}>
+                    <Box sx={{display:'flex' , justifyContent:'space-between'}}>
+                      <Typography>{item.productName}</Typography>
+                      <Typography>{(item.price * item.count)}$</Typography>
+                    </Box>
+                    <Box sx={{display:'flex' , justifyContent:'space-between'}}>
+                        <Box sx={{border:'2px solid', boxShadow:2 , borderRadius:3 , backgroundColor: mode === 'light' ? 'white' : 'gray'}}>
+                          <IconButton disabled={isUpdatePending}>
+                            <RemoveIcon onClick={() => handleUpdate( item.productId,'-' )}/>
+                          </IconButton>                           
+                          {item.count}
+                          <IconButton disabled={isUpdatePending} >
+                            <AddIcon onClick={() => handleUpdate( item.productId,'+' )}/>
+                          </IconButton>
+                        </Box>
+                          
+                        <IconButton  disabled={isRemovePending} onClick={() => removeItem(item.productId)}>
+                          <DeleteForeverOutlinedIcon />
+                        </IconButton>
+                    </Box>
+                    
                 </Box>
-              </TableCell>
-              <TableCell>{(item.price * item.count)}$</TableCell>
-              <TableCell>
-                <Button variant="contained" color="error" disabled={isRemovePending} onClick={() => removeItem(item.productId)}>
-                  Remove
-                </Button>
-              </TableCell>
-            </TableRow>)}
-            
-          </TableBody>
-        </Table>
 
-      </TableContainer>
-      <Box>
-        <Button variant="contained" onClick={() =>navigate('/checkout')}>
-          Proceed to Checkout
+              </Box>
+           )}
+            
+  
+
+      <Box sx={{display:'flex' , gap:3}}>
+        <Button variant="contained" onClick={() =>navigate('/checkout')} sx={{
+          boxShadow:2,
+          display:'flex',
+          gap:1,
+          justifyContent:{md:'start'},
+          py:1.5,
+          px:{xs:2,sm:5},
+            backgroundColor:"#3F51B5",
+            color:'#CACFFF',
+          '&:hover':{
+            backgroundColor: mode === 'light' ? 'white' : 'gray',
+            color: mode === 'light' ? '#1A1B22' : 'white'
+          }
+        }}>
+          <Typography sx={{fontSize:{xs:'11.5px',sm:'16px'},fontWeight:500, textTransform:'none'}}>Proceed to Checkout</Typography>
         </Button>
-        <Button variant="outlined" onClick={() =>navigate('/')}>
-          Continue Shopping
+        <Button variant="outlined" onClick={() =>navigate('/')} sx={{
+          boxShadow:2,
+          display:'flex',
+          gap:1,
+          justifyContent:{md:'start'},
+          py:1.5,
+          px:{xs:2,sm:5},
+          '&:hover':{
+            backgroundColor:"#3F51B5",
+            color:'#CACFFF',
+          }
+        }}>
+          <Typography sx={{fontSize:{xs:'11.5px',sm:'16px'},fontWeight:500 , textTransform:'none'}}>Continue Shopping</Typography>
         </Button>
       </Box>
-    </Box>
+    </Container>
   )
 }
