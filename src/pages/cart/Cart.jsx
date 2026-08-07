@@ -15,10 +15,13 @@ import { useNavigate } from 'react-router-dom';
 import useThemeStore from '../../store/useThemeStore';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import { useTranslation } from 'react-i18next';
+import useClearCart from '../../hooks/useClearCart';
 export default function Cart() {
   const {mutate : updateItem , isPending: isUpdatePending} = useUpdateCartItem();
   const{data, isLoading, isError, error} = useCart();
   const {mutate : removeItem , isPending: isRemovePending} = useRemoveFromCart();
+  
+  const {mutate : clearItems , isPending: isClearPending} = useClearCart();
   const navigate = useNavigate();
   const {mode, toggleMode} = useThemeStore();
   const {t} = useTranslation();
@@ -47,6 +50,7 @@ export default function Cart() {
       <Typography component="h1" variant="h3">
        {t('Cart')} 
       </Typography>
+            <Box sx={{boxShadow:4 , py:4 , px:3 , my:3 , borderRadius:2 , minHeight:{xs:400,md:700}}}>
             {data.items.map((item)=><Box key={item.id} sx={{my:3, }}>
               
 
@@ -75,10 +79,10 @@ export default function Cart() {
 
               </Box>
            )}
-            
+            </Box>
   
 
-      <Box sx={{display:'flex' , gap:3}}>
+      <Box sx={{display:'flex' , gap:3,}}>
         <Button variant="contained" onClick={() =>navigate('/checkout')} sx={{
           boxShadow:2,
           display:'flex',
@@ -108,6 +112,22 @@ export default function Cart() {
           }
         }}>
           <Typography sx={{fontSize:{xs:'11.5px',sm:'16px'},fontWeight:500 , textTransform:'none'}}>{t('Continue Shopping')}</Typography>
+        </Button>
+        <Button variant="outlined" disabled={isClearPending} onClick={() => clearItems(data?.items)} sx={{
+          boxShadow:2,
+          display:'flex',
+          gap:1,
+          justifyContent:{md:'start'},
+          py:1.5,
+          px:{xs:2,sm:5},
+          backgroundColor:"red",
+          color:'black',
+          '&:hover':{
+            
+            color:'#CACFFF',
+          }
+        }}>
+          <Typography sx={{fontSize:{xs:'11.5px',sm:'16px'},fontWeight:500 , textTransform:'none'}}>{t('Clear Cart')}</Typography>
         </Button>
       </Box>
     </Container>
