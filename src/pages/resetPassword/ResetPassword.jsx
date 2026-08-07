@@ -18,6 +18,7 @@ import { resetSchema } from '../../validations/ResetSchema';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import i18n from '../../i18next';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
+import authAxiosInstance from '../../api/authAxiosInstance';
 export default function ResetPassword() {
   const setToken = useAuthStore((state) => state.setToken);
           const navigate = useNavigate();
@@ -30,7 +31,7 @@ export default function ResetPassword() {
           );
           const ResetForm = async(data)=>{
             try{
-              const response = await axiosInstance.post(`/auth/Account/ResetPassword`,data)
+              const response = await axiosInstance.patch('/auth/Account/ResetPassword',data);
               setToken(response.data.accessToken);
               navigate('/login');
             }catch(err){
@@ -48,7 +49,7 @@ export default function ResetPassword() {
       <Typography color='primary' sx={{fontSize:'14px' ,fontWeight:400, mt:-2}}>{t('Please enter your new password below to secure your account.')}</Typography>
       <TextField sx={{width:'90%'}} fullWidth {...register("code")} label={t('Code')} variant='outlined' error={errors.code} helperText={errors.code?.message}/>
       <TextField sx={{width:'90%'}} fullWidth {...register("newPassword")} label={t('New Password')} variant='outlined' error={errors.newPassword} helperText={errors.newPassword?.message}/>
-      <TextField sx={{width:'90%'}} fullWidth {...register("email")} label={t('Email Address')} variant='outlined' error={errors.Email} helperText={errors.Email?.message}/>
+      <TextField sx={{width:'90%'}} fullWidth {...register("email")} label={t('Email Address')} variant='outlined' error={errors.email} helperText={errors.email?.message}/>
       <Typography color='error'>{serverErrors}</Typography>
       <Box onSubmit={handleSubmit(ResetForm)} component="form" sx={{marginTop:2 , display:'flex' , gap:3 , flexDirection:'column'}}>
           <Button  variant="contained" type="submit" disabled={isSubmitting} sx={{backgroundColor:'#24389C', textTransform:'none' , py:1.5 , px:10 , borderRadius:2}}>

@@ -35,7 +35,6 @@ export default function ForgotPassword() {
               setServerErrors(err.response.data.message);
             }
           }
-
   return (
     
     <Container maxWidth="sm" sx={{height:'100vh' , mt:10}}> 
@@ -44,7 +43,7 @@ export default function ForgotPassword() {
         <LockResetIcon sx={{fontSize:'90px', color:'#24389C'}}/>
       <Typography variant='h4' component="h1" sx={{mb:2}}>{t('Forgot Password')}</Typography>
       <Typography color='primary' sx={{fontSize:'14px' ,fontWeight:400, mt:-2}}>{t('Enter your email address and we\'ll send you an OTP to reset your password.')}</Typography>
-      <TextField sx={{width:'90%'}} fullWidth {...register("email")} label={t('Email Address')} variant='outlined' error={errors.Email} helperText={errors.Email?.message}/>
+      <TextField sx={{width:'90%'}} fullWidth {...register("email")} label={t('Email Address')} variant='outlined' error={errors.email} helperText={errors.email?.message}/>
       <Typography color='error'>{serverErrors}</Typography>
       <Box onSubmit={handleSubmit(ForgotForm)} component="form" sx={{marginTop:2 , display:'flex' , gap:4 , }}>
           <Button  variant="contained" type="submit" disabled={isSubmitting} sx={{backgroundColor:'#24389C', textTransform:'none' , py:1.5 , px:10}}>

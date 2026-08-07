@@ -45,7 +45,7 @@ export default function Login() {
       <TextField sx={{width:'90%'}} fullWidth {...register("Email")} label={t('Email')} variant='outlined' error={errors.Email} helperText={errors.Email?.message}/>
 
       <TextField sx={{width:'90%'}} fullWidth {...register("Password")} label={t('Password')}  variant='outlined' error={errors.Password} helperText={errors.Password?.message}/>
-
+      <Typography color='error'>{serverErrors}</Typography>
       <Link to="/forgot" ><Typography color='primary'>{t('Forgot password?')}</Typography></Link>
 
       <Box onSubmit={handleSubmit(LoginForm)} component="form" sx={{marginTop:2 , display:'flex' , gap:4 , }}>
