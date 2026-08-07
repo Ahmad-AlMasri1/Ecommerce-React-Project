@@ -104,6 +104,7 @@ i18n
             "Payment Method":"Payment Method",
             "Credit / Debit Card":"Credit / Debit Card",
             "Cash on Delivery":"Cash on Delivery",
+            "Clear Cart":"Clear Cart",
             }
         },
         ar: {
@@ -199,7 +200,7 @@ i18n
             "Payment Method":"طريقة الدفع",
             "Credit / Debit Card":"بطاقة ائتمان/خصم",
             "Cash on Delivery":"الدفع عند الاستلام",
-            
+            "Clear Cart":"مسح السلة",
             }
         }
     },
