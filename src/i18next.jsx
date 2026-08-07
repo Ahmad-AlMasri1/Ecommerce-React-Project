@@ -93,6 +93,17 @@ i18n
             "Amount Paid":"Amount Paid",
             "Status":"Status",
             "Order Date":"Order Date",
+            "Continue Shopping":"Continue Shopping",
+            "Proceed to Checkout":"Proceed to Checkout",
+            "Quantity":"Quantity",
+            "Order Summary":"Order Summary",
+            "Subtotal":"Subtotal",
+            "Shipping":"Shipping",
+            "Total":"Total",
+            "Place Order":"Place Order",
+            "Payment Method":"Payment Method",
+            "Credit / Debit Card":"Credit / Debit Card",
+            "Cash on Delivery":"Cash on Delivery",
             }
         },
         ar: {
@@ -177,6 +188,17 @@ i18n
             "Amount Paid":"المبلغ المدفوع",
             "Status":"الحالة",
             "Order Date":"تاريخ الطلب",
+            "Continue Shopping":"متابعة التسوق",
+            "Proceed to Checkout":"الذهاب إلى الدفع",
+            "Quantity":"الكمية",
+            "Order Summary":"ملخص الطلب",
+            "Subtotal":"المجموع الفرعي",
+            "Shipping":"الشحن",
+            "Total":"الإجمالي",
+            "Place Order":"تأكيد الطلب",
+            "Payment Method":"طريقة الدفع",
+            "Credit / Debit Card":"بطاقة ائتمان/خصم",
+            "Cash on Delivery":"الدفع عند الاستلام",
             
             }
         }

@@ -14,12 +14,14 @@ import AddIcon from '@mui/icons-material/Add';
 import { useNavigate } from 'react-router-dom';
 import useThemeStore from '../../store/useThemeStore';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
+import { useTranslation } from 'react-i18next';
 export default function Cart() {
   const {mutate : updateItem , isPending: isUpdatePending} = useUpdateCartItem();
   const{data, isLoading, isError, error} = useCart();
   const {mutate : removeItem , isPending: isRemovePending} = useRemoveFromCart();
   const navigate = useNavigate();
   const {mode, toggleMode} = useThemeStore();
+  const {t} = useTranslation();
   const handleUpdate = (productId, action) => {
     if (action === '+') {
       updateItem({ productId, count: data.items.find(item => item.productId === productId).count + 1 });
@@ -43,7 +45,7 @@ export default function Cart() {
   return (
     <Container sx={{py:4,minHeight:'100vh'}}>
       <Typography component="h1" variant="h3">
-        Cart
+       {t('Cart')} 
       </Typography>
             {data.items.map((item)=><Box key={item.id} sx={{my:3, }}>
               
@@ -91,7 +93,7 @@ export default function Cart() {
             color: mode === 'light' ? '#1A1B22' : 'white'
           }
         }}>
-          <Typography sx={{fontSize:{xs:'11.5px',sm:'16px'},fontWeight:500, textTransform:'none'}}>Proceed to Checkout</Typography>
+          <Typography sx={{fontSize:{xs:'11.5px',sm:'16px'},fontWeight:500, textTransform:'none'}}>{t('Proceed to Checkout')}</Typography>
         </Button>
         <Button variant="outlined" onClick={() =>navigate('/')} sx={{
           boxShadow:2,
@@ -105,7 +107,7 @@ export default function Cart() {
             color:'#CACFFF',
           }
         }}>
-          <Typography sx={{fontSize:{xs:'11.5px',sm:'16px'},fontWeight:500 , textTransform:'none'}}>Continue Shopping</Typography>
+          <Typography sx={{fontSize:{xs:'11.5px',sm:'16px'},fontWeight:500 , textTransform:'none'}}>{t('Continue Shopping')}</Typography>
         </Button>
       </Box>
     </Container>
