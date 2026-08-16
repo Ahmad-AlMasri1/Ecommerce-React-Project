@@ -4,7 +4,7 @@ import useAuthStore from '../../store/useAuthStore'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import i18n from '../../i18next.jsx'
-import { Button , Box, Typography, MenuItem ,Menu} from '@mui/material'
+import { Button , Typography, MenuItem ,Menu} from '@mui/material'
 import useThemeStore from '../../store/useThemeStore'
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
@@ -14,17 +14,22 @@ import Brightness5OutlinedIcon from '@mui/icons-material/Brightness5Outlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import Drawer from '@mui/material/Drawer';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Box from '@mui/material/Box';
 export default function Navbar() {
   const changeLanguage = () => {
     const lan=i18n.language === 'en' ? 'ar' : 'en';
     i18n.changeLanguage(lan);
   }
-  const [anchor,setAnchor] = useState(null);
   const openMenu = (event) =>{
     setAnchor(event.currentTarget)
-  }
-  const closeMenu = ()=>{
-    setAnchor(null);
   }
   const {mode, toggleMode} = useThemeStore();
   const { t } = useTranslation();
@@ -35,85 +40,69 @@ export default function Navbar() {
     logout();
     navigate('/login');
   }
+  const [open, setOpen] = useState(false);
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
+  
   return (
     <Box sx={{position:'sticky',top:0,zIndex:100,}}>
     <Box   sx={{flexGrow:1, display: 'flex', justifyContent: 'space-between', alignItems: 'center',mx:'auto', py:'10px',px:10, backgroundColor: mode === 'light' ? '#F4F2FC' : 'black', color: mode === 'light' ? '#000' : '#fff' }}>
-      <IconButton onClick={anchor === null ? openMenu : closeMenu} sx={{display: {xs: 'flex', sm:'none'},}}>
-        <MenuOutlinedIcon />
-        <Menu open={Boolean(anchor)} keepMounted anchorEl={anchor} onClose={closeMenu} sx={{display:'flex'}}> 
-        <MenuItem
-        sx={{p:0,}}><Button fullWidth variant='none'
-        href='/'
-         sx={{ 
-          display: 'flex',
-        justifyContent:'center',        
-          fontWeight: 400,
-          fontSize: '16px',
-          lineHeight: '24px',
-          '&:hover': {
-            color: '#24389C',
-         },
-          }}
-         >{t('Home')}</Button></MenuItem>
-         <MenuItem
-         sx={{p:0,}}><Button fullWidth href='/products'  variant="none"  sx={{
-    
-            display: 'flex',
-        justifyContent:'center',        
-          fontWeight: 400,
-          fontSize: '16px',
-          lineHeight: '24px',
-          '&:hover': {
-            color: '#24389C',
-         },
-            }} >{t('Products')}</Button></MenuItem>
-        <MenuItem
-        sx={{p:0,}}><Button fullWidth variant='none' 
-        href='/profile'
-         sx={{ 
-          display: 'flex',
-        justifyContent:'center',         
-          fontWeight: 400,
-          fontSize: '16px',
-          lineHeight: '24px',
-          '&:hover': {
-            color: '#24389C',
-         },
-          }}
-         >{t('Profile')}</Button></MenuItem>
-        <MenuItem
-        sx={{p:0,}}>
-        <Button  fullWidth sx={{
-        display: 'flex',
-        justifyContent:'center',
-                 
-          fontWeight: 400,
-          fontSize: '16px',
-          lineHeight: '24px',
-          '&:hover': {
-            color: '#24389C',
-         },
-      }} onClick={() => {
-        localStorage.setItem('mode', mode === 'light' ? 'dark' : 'light');
-        toggleMode()
+      <IconButton  onClick={toggleDrawer(true)} sx={{display: {xs: 'flex', sm:'none'},}}>
+        <MenuOutlinedIcon /></IconButton>
+        <Drawer anchor={i18n.language === 'en' ? 'left' : 'right'} open={open} onClose={toggleDrawer(false)} >
+          <Box sx={{width:250 ,height:1000, backgroundColor:mode === 'light'? '#F4F2FC' : 'black' }} role="presentation">
+            <List  sx={{mt:2 , mb:'auto'}}>
+              <ListItem disablePadding  sx={{ display:'flex' , flexDirection:'column' , alignItems:'start'}}> 
+                  <ListItemButton   href='/' >
+                  <ListItemIcon>
+                    <HomeOutlinedIcon/>
+                  </ListItemIcon>
+                  <ListItemText  primary={t('Home')}/>
+                </ListItemButton>
+              </ListItem>
 
-      }} variant='none' >
-        {mode === 'light' ? t('Dark Mode'): t('Light Mode')}
-      </Button></MenuItem>
-        <MenuItem sx={{p:0,}}> <Button  onClick={changeLanguage} aria-label="change language" variant='none' fullWidth sx={{ 
-        display: 'flex',
-        justifyContent:'center',        
-          fontWeight: 400,
-          fontSize: '16px',
-          lineHeight: '24px',
-          '&:hover': {
-            color: '#24389C',
-         },
-      }}>{i18n.language === "en"? t('AR') : t('EN')}</Button>
-      </MenuItem>
+               <ListItem disablePadding sx={{ display:'flex' , flexDirection:'column' , alignItems:'start'}}>
+                  <ListItemButton   href='/products' >
+                  <ListItemIcon>
+                    <CategoryOutlinedIcon/>
+                  </ListItemIcon>
+                  <ListItemText  primary={t('Products')}/>
+                </ListItemButton>
+              </ListItem>
+
+              <ListItem disablePadding sx={{ display:'flex' , flexDirection:'column' , alignItems:'start'}}>
+                  <ListItemButton   href='/profile' >
+                  <ListItemIcon>
+                    <AccountCircleOutlinedIcon/>
+                  </ListItemIcon>
+                  <ListItemText  primary={t('Profile')}/>
+                </ListItemButton>
+              </ListItem>
+
+              <ListItem disablePadding sx={{ display:'flex' , flexDirection:'column' , alignItems:'start'}}>
+                  <ListItemButton onClick={() => {localStorage.setItem('mode', mode === 'light' ? 'dark' : 'light'); toggleMode()}} >
+                  <ListItemIcon>
+                    {mode === 'light' ? <Brightness2OutlinedIcon/>:<Brightness5OutlinedIcon/>}
+                  </ListItemIcon>
+                  <ListItemText  primary={mode === 'light' ?t('Dark Mode'):t('Light Mode')}/>
+                </ListItemButton>
+              </ListItem>
+
+              <ListItem disablePadding sx={{ display:'flex' , flexDirection:'column' , alignItems:'start'}}>
+                  <ListItemButton  onClick={changeLanguage}>
+                  <ListItemIcon>
+                    <LanguageIcon />
+                  </ListItemIcon>
+                  <ListItemText  primary={i18n.language === "en"? t('Arabic') : t('English')}/>
+                </ListItemButton>
+              </ListItem>
+
+            </List>
+            </Box> 
         
-        </Menu>
-      </IconButton>
+        </Drawer>
+      
 
 
 

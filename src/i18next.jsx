@@ -105,6 +105,8 @@ i18n
             "Credit / Debit Card":"Credit / Debit Card",
             "Cash on Delivery":"Cash on Delivery",
             "Clear Cart":"Clear Cart",
+            "Arabic":"Arabic",
+            "English":"English"
             }
         },
         ar: {
@@ -201,6 +203,8 @@ i18n
             "Credit / Debit Card":"بطاقة ائتمان/خصم",
             "Cash on Delivery":"الدفع عند الاستلام",
             "Clear Cart":"مسح السلة",
+            "Arabic":"العربية",
+            "English":"الإنجليزية"
             }
         }
     },
