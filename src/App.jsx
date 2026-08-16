@@ -27,12 +27,10 @@ export default function App() {
         <QueryClientProvider client={queryClient}>
           <ThemeProvider theme={getTheme(mode)}>
             <CssBaseline />
-            <StarsBackground />
             <Box sx={{position:'relative' , minHeight:'100vh' , bgcolor:'transparent' }}>
+              <StarsBackground />
               < RouterProvider router={router} /> 
             </Box>
-           
-            
           </ThemeProvider>
         </QueryClientProvider>
     </>

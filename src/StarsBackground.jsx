@@ -10,8 +10,8 @@ export default function StarsBackground() {
     <Particles 
       init={init} 
       options={{ preset: "stars", background: { color: "transparent"  } , particles: {
-      color: { value: mode === 'light' ? "#0000" : "#FFFF" } 
-    } }}
+      color: { value: mode === 'light' ? "#000000" : "#FFFFFF" },
+    },fullScreen: { enable: false }  }}
       style={{ position: "absolute", zIndex: -10 , top: 0, left: 0, width: "100%", height: "100%",pointerEvents:'none' }} 
     />
   );
