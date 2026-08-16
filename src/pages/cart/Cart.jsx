@@ -43,7 +43,6 @@ export default function Cart() {
   if(isError){
     return <div>Error: {error.message}</div>
   }
-  console.log(data);
 
   return (
     <Container sx={{py:4,minHeight:'100vh'}}>
@@ -83,6 +82,7 @@ export default function Cart() {
   
 
       <Box sx={{display:'flex' , gap:3,}}>
+        {data.cartTotal > 0 ? 
         <Button variant="contained" onClick={() =>navigate('/checkout')} sx={{
           boxShadow:2,
           display:'flex',
@@ -98,7 +98,8 @@ export default function Cart() {
           }
         }}>
           <Typography sx={{fontSize:{xs:'11.5px',sm:'16px'},fontWeight:500, textTransform:'none'}}>{t('Proceed to Checkout')}</Typography>
-        </Button>
+        </Button> : ''}
+        
         <Button variant="outlined" onClick={() =>navigate('/')} sx={{
           boxShadow:2,
           display:'flex',
