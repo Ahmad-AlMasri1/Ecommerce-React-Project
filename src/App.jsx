@@ -7,9 +7,12 @@ import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import { ThemeProvider } from '@emotion/react'
 import theme from './theme.jsx'
-import { CssBaseline } from '@mui/material'
+import { Box , CssBaseline } from '@mui/material'
 import useThemeStore from './store/useThemeStore'
 import getTheme from './theme.jsx'
+import StarBackground from './StarsBackground.jsx'
+import StarsBackground from './StarsBackground.jsx'
+
 export default function App() {
   const {i18n} = useTranslation();
   
@@ -24,7 +27,12 @@ export default function App() {
         <QueryClientProvider client={queryClient}>
           <ThemeProvider theme={getTheme(mode)}>
             <CssBaseline />
-            < RouterProvider router={router} />
+            <StarsBackground />
+            <Box sx={{position:'relative' , minHeight:'100vh' , bgcolor:'transparent' }}>
+              < RouterProvider router={router} /> 
+            </Box>
+           
+            
           </ThemeProvider>
         </QueryClientProvider>
     </>
