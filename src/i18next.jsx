@@ -106,7 +106,16 @@ i18n
             "Cash on Delivery":"Cash on Delivery",
             "Clear Cart":"Clear Cart",
             "Arabic":"Arabic",
-            "English":"English"
+            "English":"English",
+            "LIMITED TIME":"LIMITED TIME",
+            "Save up to 50%":"Save up to 50%",
+            "On selected premium essentials. Don't miss out on these exclusive deals.":"On selected premium essentials. Don't miss out on these exclusive deals.",
+            "20% OFF":"20% OFF",
+            "BUY 1 GET 1":"BUY 1 GET 1",
+            "Winter EssentialsAll Accessories":"Winter EssentialsAll Accessories",
+            "All Accessories":"All Accessories",
+            "Valid until Dec 31st":"Valid until Dec 31st",
+            "Valid until Jan 15th":"Valid until Jan 15th",
             }
         },
         ar: {
@@ -204,7 +213,16 @@ i18n
             "Cash on Delivery":"الدفع عند الاستلام",
             "Clear Cart":"مسح السلة",
             "Arabic":"العربية",
-            "English":"الإنجليزية"
+            "English":"الإنجليزية",
+            "LIMITED TIME":"لفترة محدودة",
+            "Save up to 50%":"وفر حتى 50%",
+            "On selected premium essentials. Don't miss out on these exclusive deals.":"على مجموعة مختارة من المنتجات الأساسية الفاخرة. لا تفوت هذه العروض الحصرية.",
+            "20% OFF":"خصم 20%",
+            "BUY 1 GET 1":"اشتر واحدا واحصل على واحد",
+            "Winter Essentials":"مستلزمات الشتاء",
+            "All Accessories":"جميع الملحقات",
+            "Valid until Dec 31st":"صالحة حتى 31 ديسمبر",
+            "Valid until Jan 15th":"صالحة حتى 15 يناير",
             }
         }
     },
