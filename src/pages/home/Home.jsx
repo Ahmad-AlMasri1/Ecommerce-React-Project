@@ -6,9 +6,18 @@ import Product from '../../components/product/Product'
 import useThemeStore from '../../store/useThemeStore'
 import OurFeatures from '../../components/ourFeatures/OurFeatures'
 import { useTranslation } from 'react-i18next'
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 export default function Home() {
   const {mode, toggleMode} = useThemeStore();
   const {t} = useTranslation();
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
   return (
     <>
     <Hero />
@@ -42,6 +51,82 @@ export default function Home() {
     </Container>
     </Box>
     <OurFeatures/>
+
+    <Box sx={{display:'flex', flexDirection:'column' , gap:4 , alignItems:'center'}}>
+      <Typography sx={{fontSize:{xs:'20px',sm:'34px'}}}>{t('Frequently Asked Questions')}</Typography>
+      <Typography sx={{color:'primary' , fontSize:{xs:'10px',sm:'14px'}}}>{t('Everything you need to know about shopping with us.')}</Typography>
+      <Container>
+      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} sx={{ backgroundColor: mode === 'light' ? '#F4F2FC' : 'black', color: mode === 'light' ? '#000' : '#fff' , border:'1px solid #C5C5D4'}}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography component="span" sx={{ width: '33%', flexShrink: 0 ,fontSize:{xs:'10px',sm:'16px'}}}>
+            {t('What is your return policy?')}
+          </Typography>
+          
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography sx={{fontSize:{xs:'10px',sm:'16px'}}}>
+            {t("We offer a hassle-free 30-day return policy from the date of delivery.\nItems must be unused, in their original condition, and in the original packaging.\nTo initiate a return, simply contact our support team with your order number.\nOnce received and inspected, refunds are processed to your original payment method within 5-7 business days.")}
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} sx={{ backgroundColor: mode === 'light' ? '#F4F2FC' : 'black', color: mode === 'light' ? '#000' : '#fff' , border:'1px solid #C5C5D4'}}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography component="span" sx={{ width: '33%', flexShrink: 0 ,fontSize:{xs:'10px',sm:'16px'}}}>
+            {t('How long does shipping take?')}
+          </Typography>
+          
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography sx={{fontSize:{xs:'10px',sm:'16px'}}}>
+            {t("Orders are typically processed and dispatched within 1-2 business days.\nStandard shipping usually takes 3-5 business days for domestic orders.\nInternational shipping may take anywhere from 7-14 business days depending on the destination.\nYou will receive a confirmation email with tracking details as soon as your order ships.")}
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')} sx={{ backgroundColor: mode === 'light' ? '#F4F2FC' : 'black', color: mode === 'light' ? '#000' : '#fff' , border:'1px solid #C5C5D4'}}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography component="span" sx={{ width: '33%', flexShrink: 0 ,fontSize:{xs:'10px',sm:'16px'}}}>
+            {t('Do you ship internationally?')}
+          </Typography>
+          
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography sx={{fontSize:{xs:'10px',sm:'16px'}}}>
+            {t("Yes, we proudly offer international shipping to most countries worldwide.\nShipping rates and delivery times vary depending on the destination and shipping method.\nAny applicable customs duties, taxes, or import fees are the responsibility of the customer.\nYou can view the exact shipping costs at checkout before completing your purchase.")}
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')} sx={{ backgroundColor: mode === 'light' ? '#F4F2FC' : 'black', color: mode === 'light' ? '#000' : '#fff' , border:'1px solid #C5C5D4'}}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography component="span" sx={{ width: '33%', flexShrink: 0 ,fontSize:{xs:'10px',sm:'16px'}}}>
+            {t('How can I track my order?')}
+          </Typography>
+          
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography sx={{fontSize:{xs:'10px',sm:'16px'}}}>
+            {t("Once your order has shipped, you will receive an email with a tracking number.\nYou can click the provided link to monitor your package's delivery status in real-time.\nAlternatively, log in to your account and view tracking details under 'Order History'.\nIf you don't receive tracking information within 3 business days, please contact support.")}
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      
+      </Container>
+    </Box>
     </Box>
     </>
   )

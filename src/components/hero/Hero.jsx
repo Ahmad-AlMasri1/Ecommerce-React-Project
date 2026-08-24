@@ -9,10 +9,8 @@ export default function Hero() {
     <Box sx={{
         backgroundSize:'cover',
         backgroundPosition:'center',
-        backgroundColor: '#D3D3D3',
-        backgroundImage: `url(${'https://i.ibb.co/xSRjCnCh/Hero.png'})`,
+        backgroundImage: `linear-gradient(#D3D3D380, #D3D3D380), url(${'https://i.ibb.co/xSRjCnCh/Hero.png'})`,
         backgroundRepeat: 'no-repeat',
-        opacity:0.8,
         minHeight:'80vh',
     }}>
         <Container sx={{

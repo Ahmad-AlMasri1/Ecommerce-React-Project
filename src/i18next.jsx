@@ -116,7 +116,15 @@ i18n
             "All Accessories":"All Accessories",
             "Valid until Dec 31st":"Valid until Dec 31st",
             "Valid until Jan 15th":"Valid until Jan 15th",
-            }
+            "What is your return policy?":"What is your return policy?",
+            "We offer a hassle-free 30-day return policy from the date of delivery.\nItems must be unused, in their original condition, and in the original packaging.\nTo initiate a return, simply contact our support team with your order number.\nOnce received and inspected, refunds are processed to your original payment method within 5-7 business days.":"We offer a hassle-free 30-day return policy from the date of delivery.\nItems must be unused, in their original condition, and in the original packaging.\nTo initiate a return, simply contact our support team with your order number.\nOnce received and inspected, refunds are processed to your original payment method within 5-7 business days.",
+            "How long does shipping take?":"How long does shipping take?", 
+            "Orders are typically processed and dispatched within 1-2 business days.\nStandard shipping usually takes 3-5 business days for domestic orders.\nInternational shipping may take anywhere from 7-14 business days depending on the destination.\nYou will receive a confirmation email with tracking details as soon as your order ships.":"Orders are typically processed and dispatched within 1-2 business days.\nStandard shipping usually takes 3-5 business days for domestic orders.\nInternational shipping may take anywhere from 7-14 business days depending on the destination.\nYou will receive a confirmation email with tracking details as soon as your order ships.",
+            "Do you ship internationally?":"Do you ship internationally?",
+            "Yes, we proudly offer international shipping to most countries worldwide.\nShipping rates and delivery times vary depending on the destination and shipping method.\nAny applicable customs duties, taxes, or import fees are the responsibility of the customer.\nYou can view the exact shipping costs at checkout before completing your purchase.":"Yes, we proudly offer international shipping to most countries worldwide.\nShipping rates and delivery times vary depending on the destination and shipping method.\nAny applicable customs duties, taxes, or import fees are the responsibility of the customer.\nYou can view the exact shipping costs at checkout before completing your purchase.",  
+            "How can I track my order?":"How can I track my order?",
+            "Once your order has shipped, you will receive an email with a tracking number.\nYou can click the provided link to monitor your package's delivery status in real-time.\nAlternatively, log in to your account and view tracking details under 'Order History'.\nIf you don't receive tracking information within 3 business days, please contact support.":"Once your order has shipped, you will receive an email with a tracking number.\nYou can click the provided link to monitor your package's delivery status in real-time.\nAlternatively, log in to your account and view tracking details under 'Order History'.\nIf you don't receive tracking information within 3 business days, please contact support.",  
+          }
         },
         ar: {
             translation: {
@@ -223,7 +231,15 @@ i18n
             "All Accessories":"جميع الملحقات",
             "Valid until Dec 31st":"صالحة حتى 31 ديسمبر",
             "Valid until Jan 15th":"صالحة حتى 15 يناير",
-            }
+            "What is your return policy?":"ما هي سياسة الإرجاع الخاصة بكم؟",
+            "We offer a hassle-free 30-day return policy from the date of delivery.\nItems must be unused, in their original condition, and in the original packaging.\nTo initiate a return, simply contact our support team with your order number.\nOnce received and inspected, refunds are processed to your original payment method within 5-7 business days.":"نوفر سياسة إرجاع مرنة تتيح لك إرجاع المنتجات خلال 30 يوماً من تاريخ الاستلام.\nيجب أن يكون المنتج غير مستخدم، وفي حالته الأصلية، وداخل عبوته الأساسية.\nلبدء عملية الإرجاع، يرجى التواصل مع فريق الدعم وتزويدهم برقم طلبك.\nبعد استلام وفحص المنتج، سيتم إعادة المبلغ لطريقة الدفع الأصلية خلال 5-7 أيام عمل.",
+            "How long does shipping take?":"كم تستغرق عملية الشحن؟",
+            "Orders are typically processed and dispatched within 1-2 business days.\nStandard shipping usually takes 3-5 business days for domestic orders.\nInternational shipping may take anywhere from 7-14 business days depending on the destination.\nYou will receive a confirmation email with tracking details as soon as your order ships.":"تتم معالجة الطلبات وتجهيزها للشحن عادةً خلال يوم إلى يومي عمل.\nيستغرق الشحن العادي عادةً من 3 إلى 5 أيام عمل للطلبات المحلية.\nقد يستغرق الشحن الدولي من 7 إلى 14 يوم عمل حسب وجهة التسليم.\nستتلقى رسالة تأكيد عبر البريد الإلكتروني تحتوي على تفاصيل التتبع بمجرد شحن طلبك.", 
+            "Do you ship internationally?":"هل تقومون بالشحن الدولي؟", 
+            "Yes, we proudly offer international shipping to most countries worldwide.\nShipping rates and delivery times vary depending on the destination and shipping method.\nAny applicable customs duties, taxes, or import fees are the responsibility of the customer.\nYou can view the exact shipping costs at checkout before completing your purchase.":"نعم، نحن نفخر بتوفير خدمة الشحن الدولي لمعظم دول العالم.\nتختلف أسعار الشحن ومواعيد التسليم بناءً على الوجهة وطريقة الشحن المختارة.\nيتحمل العميل مسؤولية أي رسوم جمركية أو ضرائب أو رسوم استيراد مطبقة.\nيمكنك الاطلاع على تكاليف الشحن الدقيقة في صفحة الدفع قبل إتمام عملية الشراء.",  
+            "How can I track my order?":"كيف يمكنني تتبع طلبي؟",
+            "Once your order has shipped, you will receive an email with a tracking number.\nYou can click the provided link to monitor your package's delivery status in real-time.\nAlternatively, log in to your account and view tracking details under 'Order History'.\nIf you don't receive tracking information within 3 business days, please contact support.":"بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على رقم التتبع الخاص بك.\nيمكنك النقر على الرابط المرفق لمتابعة حالة توصيل شحنتك في الوقت الفعلي.\nكبديل، يمكنك تسجيل الدخول لحسابك وعرض تفاصيل التتبع في قسم 'سجل الطلبات'.\nإذا لم تصلك معلومات التتبع خلال 3 أيام عمل، يرجى التواصل مع فريق الدعم.",    
+          }
         }
     },
     interpolation: {
