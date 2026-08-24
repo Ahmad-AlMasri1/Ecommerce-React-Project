@@ -124,6 +124,13 @@ i18n
             "Yes, we proudly offer international shipping to most countries worldwide.\nShipping rates and delivery times vary depending on the destination and shipping method.\nAny applicable customs duties, taxes, or import fees are the responsibility of the customer.\nYou can view the exact shipping costs at checkout before completing your purchase.":"Yes, we proudly offer international shipping to most countries worldwide.\nShipping rates and delivery times vary depending on the destination and shipping method.\nAny applicable customs duties, taxes, or import fees are the responsibility of the customer.\nYou can view the exact shipping costs at checkout before completing your purchase.",  
             "How can I track my order?":"How can I track my order?",
             "Once your order has shipped, you will receive an email with a tracking number.\nYou can click the provided link to monitor your package's delivery status in real-time.\nAlternatively, log in to your account and view tracking details under 'Order History'.\nIf you don't receive tracking information within 3 business days, please contact support.":"Once your order has shipped, you will receive an email with a tracking number.\nYou can click the provided link to monitor your package's delivery status in real-time.\nAlternatively, log in to your account and view tracking details under 'Order History'.\nIf you don't receive tracking information within 3 business days, please contact support.",  
+            "Frequently Asked Questions":"Frequently Asked Questions",
+            "Everything you need to know about shopping with us.":"Everything you need to know about shopping with us.",
+            "OUR MISSION":"OUR MISSION",
+            "Designed for a Sustainable Future":"Designed for a Sustainable Future",
+            "We believe that premium quality shouldn't come at the cost of the environment.\nEvery product in our collection is crafted with eco-friendly materials and ethical manufacturing processes.\nensuring a lighter footprint on our planet.":"We believe that premium quality shouldn't come at the cost of the environment.\nEvery product in our collection is crafted with eco-friendly materials and ethical manufacturing processes.\nensuring a lighter footprint on our planet.",
+            "100% Recycled Packaging":"100% Recycled Packaging",
+            "Ethically Sourced Materials":"Ethically Sourced Materials",
           }
         },
         ar: {
@@ -239,6 +246,13 @@ i18n
             "Yes, we proudly offer international shipping to most countries worldwide.\nShipping rates and delivery times vary depending on the destination and shipping method.\nAny applicable customs duties, taxes, or import fees are the responsibility of the customer.\nYou can view the exact shipping costs at checkout before completing your purchase.":"نعم، نحن نفخر بتوفير خدمة الشحن الدولي لمعظم دول العالم.\nتختلف أسعار الشحن ومواعيد التسليم بناءً على الوجهة وطريقة الشحن المختارة.\nيتحمل العميل مسؤولية أي رسوم جمركية أو ضرائب أو رسوم استيراد مطبقة.\nيمكنك الاطلاع على تكاليف الشحن الدقيقة في صفحة الدفع قبل إتمام عملية الشراء.",  
             "How can I track my order?":"كيف يمكنني تتبع طلبي؟",
             "Once your order has shipped, you will receive an email with a tracking number.\nYou can click the provided link to monitor your package's delivery status in real-time.\nAlternatively, log in to your account and view tracking details under 'Order History'.\nIf you don't receive tracking information within 3 business days, please contact support.":"بمجرد شحن طلبك، ستتلقى رسالة بريد إلكتروني تحتوي على رقم التتبع الخاص بك.\nيمكنك النقر على الرابط المرفق لمتابعة حالة توصيل شحنتك في الوقت الفعلي.\nكبديل، يمكنك تسجيل الدخول لحسابك وعرض تفاصيل التتبع في قسم 'سجل الطلبات'.\nإذا لم تصلك معلومات التتبع خلال 3 أيام عمل، يرجى التواصل مع فريق الدعم.",    
+            "Frequently Asked Questions":"الأسئلة الشائعة",
+            "Everything you need to know about shopping with us.":"كل ما تحتاج لمعرفته حول التسوق معنا.",
+            "OUR MISSION":"مهمتنا",
+            "Designed for a Sustainable Future":"مصمم من أجل مستقبل مستدام",
+            "We believe that premium quality shouldn't come at the cost of the environment.\nEvery product in our collection is crafted with eco-friendly materials and ethical manufacturing processes.\nensuring a lighter footprint on our planet.":"نؤمن بأن الجودة العالية لا ينبغي أن تكون على حساب البيئة.\nكل منتج في تشكيلتنا مصنوع باستخدام مواد صديقة للبيئة وعمليات تصنيع أخلاقية.\nلنضمن بذلك بصمة أخف على كوكبنا.",
+            "100% Recycled Packaging":"عبوة معاد تدويرها بنسبة 100%",
+            "Ethically Sourced Materials":"مواد مصدرها أخلاقي",
           }
         }
     },

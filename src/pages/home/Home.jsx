@@ -10,6 +10,8 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import CompostOutlinedIcon from '@mui/icons-material/CompostOutlined';
+import HandshakeOutlinedIcon from '@mui/icons-material/HandshakeOutlined';
 export default function Home() {
   const {mode, toggleMode} = useThemeStore();
   const {t} = useTranslation();
@@ -49,6 +51,25 @@ export default function Home() {
     </Typography>
     <Product sortBy={'name'}  order={'true'}  min={''}  max={''}/>
     </Container>
+    </Box>
+
+    <Box sx={{display:'flex' , justifyContent:'space-between',backgroundColor: mode === 'light' ? '#F4F2FC' : 'black', display:'flex' , px:'16px' , my:4 , p:4 , gap:2 , flexDirection:{xs:'column' , sm:'row' , alignItems:'center'}}}>
+        <Box sx={{display:'flex' , flexDirection:'column' , gap:4}}>
+          <Typography sx={{color:'#785900' , fontSize:'14px', fontWeight:700}}>{t('OUR MISSION')}</Typography>
+          <Typography sx={{fontSize:{xs:'30px',sm:'35px',md:'48px'} , fontWeight:400}}>{t('Designed for a Sustainable Future')}</Typography>
+          <Typography color='primary' sx={{fontSize:{xs:'14px' , sm:'16px' ,md:'18px'}, fontWeight:400 , whiteSpace: 'pre-line'}}>{t("We believe that premium quality shouldn't come at the cost of the environment.\nEvery product in our collection is crafted with eco-friendly materials and ethical manufacturing processes.\nensuring a lighter footprint on our planet.")}
+          </Typography>
+          <Box sx={{display:'flex' , flexDirection:'column' , gap:1 , py:2}}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap:1 }}><CompostOutlinedIcon sx={{backgroundColor:'#3F51B54D' , color:'#24389C' , p:'4px' , fontSize:'30px' , borderRadius:3}}/> <Typography sx={{fontSize:'16px' , fontWeight:400}}> {t('100% Recycled Packaging')}</Typography></Box>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap:1 }}><HandshakeOutlinedIcon sx={{backgroundColor:'#3F51B54D' , color:'#24389C' , p:'4px' , fontSize:'30px' , borderRadius:3}}/> <Typography sx={{fontSize:'16px' , fontWeight:400}}> {t('Ethically Sourced Materials')}</Typography></Box>
+          </Box>
+        </Box>
+
+        <Box
+        component="img" sx={{borderRadius:4 ,width: '100%',maxWidth: '400px'}} src='https://i.pinimg.com/736x/30/1e/7a/301e7a3a6d03206271740e9247b61f42.jpg'
+      >
+
+      </Box>
     </Box>
     <OurFeatures/>
 
