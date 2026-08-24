@@ -1,7 +1,7 @@
 import React from 'react'
 import Categories from '../../components/categories/Categories'
 import Hero from '../../components/hero/Hero'
-import { Container ,Typography ,Box} from '@mui/material'
+import { Container ,Typography ,Box , Button} from '@mui/material'
 import Product from '../../components/product/Product'
 import useThemeStore from '../../store/useThemeStore'
 import OurFeatures from '../../components/ourFeatures/OurFeatures'
@@ -44,6 +44,25 @@ export default function Home() {
         </Box>
       </Box>
     </Box> 
+   
+   <Container sx={{py:4}}>
+      <Box sx={{borderRadius:2 , backgroundSize:'cover',display:'flex', flexDirection:'column',gap:2,
+        backgroundPosition:'center',
+        backgroundImage: `linear-gradient(#D3D3D380, #D3D3D380), url(${'https://i.pinimg.com/736x/6e/8d/ee/6e8dee0382ef32de6093e3af8e83dcad.jpg'})`,
+        backgroundRepeat: 'no-repeat',
+        width:'100%',
+        minHeight:'40vh',
+        p:4
+        }}>
+          <Typography sx={{color:'#24389C' , fontSize:'14px' , fontWeight:700 ,}}>{t('EXCLUSIVE PARTNERSHIP')}</Typography>
+          <Typography sx={{fontSize:'48px' , fontWeight:400}}>{t('The Winter Collection')}</Typography>
+          <Typography color='primary' sx={{fontSize:'16px' , fontWeight:400}}>{t("Discover our exclusive collaboration featuring premium materials and timeless design perfect for the season.")}</Typography>
+          <Button href='/products' variant='contained' sx={{backgroundColor:'#24389C',display:'flex' , px:'25px', py:'7px',width: 'fit-content' , borderRadius:3 , textTransform: 'none'}}>
+          {t('Shop the Collection') } 
+        </Button>
+      </Box>
+    </Container> 
+    
     <Box sx={{backgroundColor: mode === 'light' ? '#F4F2FC' : 'black', color: mode === 'light' ? '#000' : '#fff' , py:4}}>
     <Container>
     <Typography variant='h2' color='primary' sx={{fontSize:'35px' , pb:3}}>
@@ -71,6 +90,7 @@ export default function Home() {
 
       </Box>
     </Box>
+
     <OurFeatures/>
 
     <Box sx={{display:'flex', flexDirection:'column' , gap:4 , alignItems:'center'}}>

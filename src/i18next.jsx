@@ -131,6 +131,10 @@ i18n
             "We believe that premium quality shouldn't come at the cost of the environment.\nEvery product in our collection is crafted with eco-friendly materials and ethical manufacturing processes.\nensuring a lighter footprint on our planet.":"We believe that premium quality shouldn't come at the cost of the environment.\nEvery product in our collection is crafted with eco-friendly materials and ethical manufacturing processes.\nensuring a lighter footprint on our planet.",
             "100% Recycled Packaging":"100% Recycled Packaging",
             "Ethically Sourced Materials":"Ethically Sourced Materials",
+            "EXCLUSIVE PARTNERSHIP":"EXCLUSIVE PARTNERSHIP",
+            "The Winter Collection":"The Winter Collection",
+            "Discover our exclusive collaboration featuring premium materials and timeless design perfect for the season.":"Discover our exclusive collaboration featuring premium materials and timeless design perfect for the season.",
+            "Shop the Collection":"Shop the Collection",
           }
         },
         ar: {
@@ -253,6 +257,10 @@ i18n
             "We believe that premium quality shouldn't come at the cost of the environment.\nEvery product in our collection is crafted with eco-friendly materials and ethical manufacturing processes.\nensuring a lighter footprint on our planet.":"نؤمن بأن الجودة العالية لا ينبغي أن تكون على حساب البيئة.\nكل منتج في تشكيلتنا مصنوع باستخدام مواد صديقة للبيئة وعمليات تصنيع أخلاقية.\nلنضمن بذلك بصمة أخف على كوكبنا.",
             "100% Recycled Packaging":"عبوة معاد تدويرها بنسبة 100%",
             "Ethically Sourced Materials":"مواد مصدرها أخلاقي",
+            "EXCLUSIVE PARTNERSHIP":"شراكة حصرية",
+            "The Winter Collection":"مجموعة الشتاء",
+            "Discover our exclusive collaboration featuring premium materials and timeless design perfect for the season.":"اكتشفوا تعاوننا الحصري الذي يتميز بمواد فاخرة وتصميم خالد مثالي لهذا الموسم.",
+            "Shop the Collection":"تسوق المجموعة",
           }
         }
     },
