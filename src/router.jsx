@@ -16,6 +16,7 @@ import ForgotPassword from "./pages/forgotPassowrd/ForgotPassword";
 import ResetPassword from "./pages/resetPassword/ResetPassword";
 import AboutUs from "./pages/aboutUs/AboutUs";
 import ProtectedCart from "./components/protectedCart/ProtectedCart";
+import GuestRouter from "./components/guestRouter/GuestRouter";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -40,12 +41,12 @@ const router = createBrowserRouter([
         ,
         {
             path:"login",
-            element:<Login />
+            element:<GuestRouter><Login /></GuestRouter>
         }
         ,
         {
             path:"register",
-            element:<Register />
+            element:<GuestRouter><Register /></GuestRouter>
         },
         {
             path:"checkout",
@@ -67,11 +68,11 @@ const router = createBrowserRouter([
         }
         ,{
             path:"forgot",
-            element:<ForgotPassword />
+            element:<GuestRouter><ForgotPassword /></GuestRouter>
         }
         ,{
             path:"reset",
-            element:<ResetPassword />
+            element:<GuestRouter><ResetPassword /></GuestRouter>
         }
         ,{
             path:"aboutUs",
