@@ -138,6 +138,10 @@ i18n
             "About Us":"About Us",
             "Redefining Modern Commerce":"Redefining Modern Commerce",
             "We believe in creating seamless, intuitive, and beautiful shopping experiences that empower both creators and consumers in the digital age.":"We believe in creating seamless, intuitive, and beautiful shopping experiences that empower both creators and consumers in the digital age.",
+            "Our Story":"Our Story", 
+            "Founded in 2024, ShopModern began with a simple idea: that corporate commerce doesn't have to be clinical. We saw a gap between high-end design principles and everyday e-commerce utility. Our vision was to bridge that gap by building a platform that marries aesthetic elegance with uncompromised functionality.":"Founded in 2024, ShopModern began with a simple idea: that corporate commerce doesn't have to be clinical. We saw a gap between high-end design principles and everyday e-commerce utility. Our vision was to bridge that gap by building a platform that marries aesthetic elegance with uncompromised functionality.", 
+            "What started as a small team of designers and engineers has grown into a global community dedicated to pushing the boundaries of what a modern storefront can be. We prioritize clean architecture, logical user flows, and an unwavering commitment to quality.":"What started as a small team of designers and engineers has grown into a global community dedicated to pushing the boundaries of what a modern storefront can be. We prioritize clean architecture, logical user flows, and an unwavering commitment to quality.", 
+          
           }
         },
         ar: {
@@ -267,7 +271,10 @@ i18n
             "About Us":"نبذة عنا",
             "Redefining Modern Commerce":"إعادة تعريف التجارة الحديثة",
             "We believe in creating seamless, intuitive, and beautiful shopping experiences that empower both creators and consumers in the digital age.":"نحن نؤمن بإنتاج تجارب تسوق سلسة وبديهية وجميلة تمكّن كلاً من المبدعين والمستهلكين في العصر الرقمي.",
-          
+            "Our Story":"قصتنا", 
+            "Founded in 2024, ShopModern began with a simple idea: that corporate commerce doesn't have to be clinical. We saw a gap between high-end design principles and everyday e-commerce utility. Our vision was to bridge that gap by building a platform that marries aesthetic elegance with uncompromised functionality.":"انطلقت شركة ShopModern عام 2024 بفكرة بسيطة: أن التجارة الإلكترونية لا يجب أن تكون جامدة. لاحظنا وجود فجوة بين مبادئ التصميم الراقي وسهولة استخدام التجارة الإلكترونية اليومية. تمثلت رؤيتنا في سد هذه الفجوة من خلال بناء منصة تجمع بين الأناقة الجمالية والوظائف العملية المتكاملة.", 
+            "What started as a small team of designers and engineers has grown into a global community dedicated to pushing the boundaries of what a modern storefront can be. We prioritize clean architecture, logical user flows, and an unwavering commitment to quality.":"ما بدأ كفريق صغير من المصممين والمهندسين، نما ليصبح مجتمعًا عالميًا ملتزمًا بتوسيع آفاق مفهوم واجهة المتجر الحديثة. نولي أهمية قصوى للتصميم المعماري النظيف، وسلاسة تجربة المستخدم، والتزامنا الراسخ بالجودة.", 
+            
 
           }
         }
