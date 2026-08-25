@@ -147,6 +147,12 @@ i18n
             "We are committed to reducing our footprint. From eco-friendly packaging to sustainable sourcing, we prioritize the planet in our operations.":"We are committed to reducing our footprint. From eco-friendly packaging to sustainable sourcing, we prioritize the planet in our operations.",
             "We believe in building things that last. Every component, every line of code, and every product interaction is crafted with meticulous attention to detail.":"We believe in building things that last. Every component, every line of code, and every product interaction is crafted with meticulous attention to detail.",
             "Our design philosophy centers entirely around the user. We strive to create frictionless, intuitive experiences that anticipate and resolve needs.":"Our design philosophy centers entirely around the user. We strive to create frictionless, intuitive experiences that anticipate and resolve needs.",
+            "Meet the Team":"Meet the Team", 
+            "The minds behind the modern experience.":"The minds behind the modern experience.", 
+            "Founder & CEO":"Founder & CEO", 
+            "Head of Design":"Head of Design", 
+            "Lead Engineer":"Lead Engineer", 
+            "Marketing Director":"Marketing Director",   
           }
         },
         ar: {
@@ -285,7 +291,12 @@ i18n
             "We are committed to reducing our footprint. From eco-friendly packaging to sustainable sourcing, we prioritize the planet in our operations.":"نحن ملتزمون بتقليل أثرنا البيئي. بدءًا من التغليف الصديق للبيئة وصولًا إلى المصادر المستدامة، نولي أهمية قصوى لكوكب الأرض في عملياتنا.",
             "We believe in building things that last. Every component, every line of code, and every product interaction is crafted with meticulous attention to detail.":"نحن نؤمن ببناء أشياء تدوم. كل مكون، وكل سطر من التعليمات البرمجية، وكل تفاعل مع المنتج يتم تصميمه بعناية فائقة بالتفاصيل.",
             "Our design philosophy centers entirely around the user. We strive to create frictionless, intuitive experiences that anticipate and resolve needs.":"تتمحور فلسفة التصميم لدينا بالكامل حول المستخدم. نسعى جاهدين لخلق تجارب سلسة وبديهية تستبق الاحتياجات وتلبيها.",
-          
+            "Meet the Team":"تعرف على الفريق", 
+            "The minds behind the modern experience.":"العقول التي تقف وراء التجربة الحديثة.", 
+            "Founder & CEO":"المؤسس والرئيس التنفيذي", 
+            "Head of Design":"رئيسة قسم التصميم", 
+            "Lead Engineer":"قائدة فريق الهندسة", 
+            "Marketing Director":"مدير التسويق",   
 
           }
         }

@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import SpaOutlinedIcon from '@mui/icons-material/SpaOutlined';
 import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
+import Avatar from '@mui/material/Avatar';
 export default function AboutUs() {
   const {mode, toggleMode} = useThemeStore();
     const { t } = useTranslation();
@@ -101,7 +102,56 @@ export default function AboutUs() {
     
     
     </Container>
+    {/* Meet The Team */}
+    <Container sx={{my:4}}>
+        <Typography sx={{fontSize:'48px' , color:'#24389C',mb:1,textAlign:'center'}}>{t('Meet the Team')}</Typography>
+        <Typography  sx={{fontSize:"16px",color:mode === 'dark' ? '#ffffff' : '#454652',textAlign:'center'}}>{t('The minds behind the modern experience.')}</Typography>
 
+        <Grid container spacing={2} sx={{my:2 , justifyContent:'center'}} >
+            <Grid size={{xs:6,sm:4,md:3}} sx={{display:'flex',justifyContent:'center',flexDirection:'column' , alignItems:'center'}}>
+                <Avatar
+                    variant="square"
+                    src="https://i.pinimg.com/736x/c7/3b/d9/c73bd9b26311039e7b3f879481263f88.jpg"
+                    sx={{ width: 120, height: 120, borderRadius:3 , mb:2 , boxShadow:3 , border:'4px solid #EFEDF6'}}
+                    />
+                <Typography sx={{fontSize:'20px' ,mb:1,textAlign:'center'}}>Elena Rostova</Typography>
+                <Typography  sx={{fontSize:"16px",color:mode === 'dark' ? '#ffffff' : '#454652',textAlign:'center'}}>{t('Head of Design')}</Typography>
+    
+            </Grid>
+            <Grid size={{xs:6,sm:4,md:3}} sx={{display:'flex',justifyContent:'center',flexDirection:'column' , alignItems:'center'}}>
+                <Avatar
+                    variant="square"
+                    src="https://i.pinimg.com/736x/c7/6e/05/c76e054ccdcdfc4370a1a86cbae7ec01.jpg"
+                    sx={{ width: 120, height: 120, borderRadius:3 , mb:2 , boxShadow:3 , border:'4px solid #EFEDF6'}}
+                    />
+                <Typography sx={{fontSize:'20px' ,mb:1,textAlign:'center'}}>Marcus Chen</Typography>
+                <Typography  sx={{fontSize:"16px",color:mode === 'dark' ? '#ffffff' : '#454652',textAlign:'center'}}>{t('Founder & CEO')}</Typography>
+    
+            </Grid>
+            <Grid size={{xs:6,sm:4,md:3}} sx={{display:'flex',justifyContent:'center',flexDirection:'column' , alignItems:'center'}}>
+                <Avatar
+                    variant="square"
+                    src="https://i.pinimg.com/736x/05/57/5d/05575d63e8eddbc332b63864b8f2f4b4.jpg"
+                    sx={{ width: 120, height: 120, borderRadius:3 , mb:2 , boxShadow:3 , border:'4px solid #EFEDF6'}}
+                    />
+                <Typography sx={{fontSize:'20px' ,mb:1,textAlign:'center'}}>Sarah Jenkins</Typography>
+                <Typography  sx={{fontSize:"16px",color:mode === 'dark' ? '#ffffff' : '#454652',textAlign:'center'}}>{t('Lead Engineer')}</Typography>
+    
+            </Grid>
+            <Grid size={{xs:6,sm:4,md:3}} sx={{display:'flex',justifyContent:'center',flexDirection:'column' , alignItems:'center'}}>
+                <Avatar
+                    variant="square"
+                    src="https://i.pinimg.com/736x/ce/ad/94/cead941fca1ea8075e01f564f1eedf98.jpg"
+                    sx={{ width: 120, height: 120, borderRadius:3 , mb:2 , boxShadow:3 , border:'4px solid #EFEDF6'}}
+                    />
+                <Typography sx={{fontSize:'20px' ,mb:1,textAlign:'center'}}>David Al-Sayed</Typography>
+                <Typography  sx={{fontSize:"16px",color:mode === 'dark' ? '#ffffff' : '#454652',textAlign:'center'}}>{t('Marketing Director')}</Typography>
+    
+            </Grid>
+        </Grid>
+    
+    
+    </Container>       
     </>
   )
 }
