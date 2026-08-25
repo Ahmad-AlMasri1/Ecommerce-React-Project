@@ -26,6 +26,7 @@ import RecordVoiceOverOutlinedIcon from '@mui/icons-material/RecordVoiceOverOutl
 import { Snackbar, Alert } from '@mui/material';
 import useCartisEmpty from '../../hooks/useCartIsEmpty.jsx';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
+import useCartTotal from '../../hooks/useCartTotal.jsx';
 export default function Navbar() {
   const changeLanguage = () => {
     const lan=i18n.language === 'en' ? 'ar' : 'en';
@@ -33,7 +34,7 @@ export default function Navbar() {
   }
 
 const [alertOpen, setAlertOpen] = useState(false);
-
+  const Count = useCartTotal();
   const cartIsEmpty = useCartisEmpty();
   const checkTheCart = () =>{
     if(cartIsEmpty === true){
@@ -238,6 +239,7 @@ const [alertOpen, setAlertOpen] = useState(false);
         {mode === 'light' ? <Brightness2OutlinedIcon /> : <Brightness5OutlinedIcon />}
       </IconButton>
       <IconButton onClick={checkTheCart}>
+            <Typography sx={{fontSize:'20px',fontWeight:500}}>{Count}</Typography>
             <ShoppingCartOutlinedIcon />    
       </IconButton>
       {token ? (
