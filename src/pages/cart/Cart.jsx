@@ -114,7 +114,7 @@ export default function Cart() {
         }}>
           <Typography sx={{fontSize:{xs:'11.5px',sm:'16px'},fontWeight:500 , textTransform:'none'}}>{t('Continue Shopping')}</Typography>
         </Button>
-        <Button variant="outlined" disabled={isClearPending} onClick={() => clearItems(data?.items)} sx={{
+        <Button variant="outlined" disabled={isClearPending} href='/' onClick={() => clearItems(data?.items)} sx={{
           boxShadow:2,
           display:'flex',
           gap:1,

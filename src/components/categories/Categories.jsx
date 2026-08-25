@@ -15,7 +15,6 @@ export default function Categories() {
     const cat = data.response.data.map((Categories)=>
             Categories
         )
-        console.log(cat);
   return (
     <Container sx={{py:4}}>
         <Typography variant='h2' color='primary' sx={{fontSize:'35px' , pb:3}}>{t('Explore Categories')}</Typography>

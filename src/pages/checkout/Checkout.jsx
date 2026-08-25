@@ -67,7 +67,6 @@ export default function Checkout() {
                     boxShadow:2,
                     display:'flex',
                     gap:1,
-                    justifyContent:{md:'start'},
                     py:1.5,
                     px:{xs:2,sm:5},
                     backgroundColor:"#3F51B5",

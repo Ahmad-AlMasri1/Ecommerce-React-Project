@@ -15,7 +15,7 @@ import ProfileOrders from "./pages/profile/ProfileOrders";
 import ForgotPassword from "./pages/forgotPassowrd/ForgotPassword";
 import ResetPassword from "./pages/resetPassword/ResetPassword";
 import AboutUs from "./pages/aboutUs/AboutUs";
-
+import ProtectedCart from "./components/protectedCart/ProtectedCart";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
         },
         {
             path:"cart",
-            element:<ProtectedRouter><Cart /></ProtectedRouter>
+            element:<ProtectedRouter><ProtectedCart><Cart /></ProtectedCart></ProtectedRouter>
         }
         ,
         {
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         },
         {
             path:"checkout",
-            element:<ProtectedRouter><Checkout /></ProtectedRouter>
+            element:<ProtectedRouter><ProtectedCart><Checkout /></ProtectedCart></ProtectedRouter>
         },
         {
             path:"profile",

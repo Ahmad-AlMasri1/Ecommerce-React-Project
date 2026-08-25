@@ -21,13 +21,26 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import Box from '@mui/material/Box';
 import RecordVoiceOverOutlinedIcon from '@mui/icons-material/RecordVoiceOverOutlined';
+import { Snackbar, Alert } from '@mui/material';
+import useCartisEmpty from '../../hooks/useCartIsEmpty.jsx';
+import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 export default function Navbar() {
   const changeLanguage = () => {
     const lan=i18n.language === 'en' ? 'ar' : 'en';
     i18n.changeLanguage(lan);
+  }
+
+const [alertOpen, setAlertOpen] = useState(false);
+
+  const cartIsEmpty = useCartisEmpty();
+  const checkTheCart = () =>{
+    if(cartIsEmpty === true){
+      setAlertOpen(true);
+    }else{
+      navigate('/cart');
+    }
   }
   const openMenu = (event) =>{
     setAnchor(event.currentTarget)
@@ -46,8 +59,32 @@ export default function Navbar() {
     setOpen(newOpen);
   };
   
+
+  const triggerAlert = () => {
+    setAlertOpen(true);
+  };
   return (
     <Box sx={{position:'sticky',top:0,zIndex:100,}}>
+      <Snackbar
+        open={alertOpen}
+        autoHideDuration={2000}
+        onClose={() => setAlertOpen(false)}
+         sx={{
+          position: 'fixed',
+          top: '50% !important',
+          left: '50% !important',
+          transform: 'translate(-50%, -50%)',
+          bottom:'unset !important',
+          right:'unset !important'
+        }}
+      >
+        <Box sx={{ display:'flex' , flexDirection:'column' , gap:3 ,alignItems:'center' ,backgroundColor: mode === 'light' ? '#F4F2FC' : 'black', color: mode === 'light' ? '#000' : '#fff' , borderRadius:3 , p:10 ,  backgroundImage: mode === 'light' 
+        ? 'radial-gradient(circle at top right, rgba(63, 81, 181, 0.20) 20%, transparent 60%)'
+        : 'radial-gradient(circle at top right, rgba(63, 81, 181, 0.20) 15%, transparent 50%)',boxShadow:3 }}>
+          <ProductionQuantityLimitsIcon sx={{fontSize:'100px' , color:'red'}} />
+          <Typography sx={{fontSize:'30px'}}>Cart Is Empty</Typography>
+        </Box>
+      </Snackbar>
     <Box   sx={{flexGrow:1, display: 'flex', justifyContent: 'space-between', alignItems: 'center',mx:'auto', py:'10px',px:10, backgroundColor: mode === 'light' ? '#F4F2FC' : 'black', color: mode === 'light' ? '#000' : '#fff' }}>
       <IconButton  onClick={toggleDrawer(true)} sx={{display: {xs: 'flex', md:'none'},}}>
         <MenuOutlinedIcon /></IconButton>
@@ -200,11 +237,12 @@ export default function Navbar() {
       }} variant="outlined" >
         {mode === 'light' ? <Brightness2OutlinedIcon /> : <Brightness5OutlinedIcon />}
       </IconButton>
+      <IconButton onClick={checkTheCart}>
+            <ShoppingCartOutlinedIcon />    
+      </IconButton>
       {token ? (
         <> 
-          <IconButton href="/cart">
-            <ShoppingCartOutlinedIcon />
-          </IconButton>
+          
           <IconButton href="/profile" sx={{
             display: {xs: 'none', md:'flex'},
           }}>
