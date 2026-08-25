@@ -8,12 +8,12 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import useAddToCart from '../../hooks/useAddToCart';
 import useAuthStore from '../../store/useAuthStore.jsx';
 import i18n from '../../i18next.jsx';
-export default function Product({sortBy , order , min , max}) {
+export default function Product({sortBy , order , min , max , byCategory}) {
     const navigate = useNavigate();
     const token = useAuthStore((state) => state.token);
      const {mode, toggleMode} = useThemeStore();
     const { t } = useTranslation();
-    const {data, isLoading, isError,error} = useProduct({sortBy , order , min , max});
+    const {data, isLoading, isError,error} = useProduct({sortBy , order , min , max , byCategory});
     const {mutate : addToCart} = useAddToCart();
     const lan=i18n.language;
     if(isError){
@@ -26,7 +26,7 @@ export default function Product({sortBy , order , min , max}) {
   return (
     <Box  component="section">
         <Grid container spacing={{xs:2,md:3}} sx={{textAlign:'center' , marginTop:2 , alignItems:'center' , justifyContent:'center'}}>
-        {data?.response?.data?.map((product)=>(
+        {data?.map((product)=>(
             <Grid size={{xs:6,sm:6,md:4}}>
             <Card sx={{position:'relative',borderRadius:1.5 ,}}>
                 <CardActionArea  variant="Button" href={`/product/${product.id}`}>

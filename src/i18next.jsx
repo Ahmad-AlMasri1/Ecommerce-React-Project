@@ -155,7 +155,10 @@ i18n
             "Marketing Director":"Marketing Director", 
             "Happy Customers":"Happy Customers",
             "Recycled Packaging":"Recycled Packaging",  
-            "Countries Served":"Countries Served",    
+            "Countries Served":"Countries Served",
+            "All":"All",   
+            "cat9":"cat9", 
+            "Electronics":"Electronics",  
           }
         },
         ar: {
@@ -302,7 +305,10 @@ i18n
             "Marketing Director":"مدير التسويق",   
             "Happy Customers":"عملاء سعداء",
             "Recycled Packaging":"التعبئة والتغليف المعاد تدويرها",  
-            "Countries Served":"الدول المخدومة", 
+            "Countries Served":"الدول المخدومة",
+            "All":"الكل",   
+            "cat9":"كات9", 
+            "Electronics":"الكترونيات", 
 
           }
         }
