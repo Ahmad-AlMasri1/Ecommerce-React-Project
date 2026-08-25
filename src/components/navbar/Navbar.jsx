@@ -23,6 +23,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Box from '@mui/material/Box';
+import RecordVoiceOverOutlinedIcon from '@mui/icons-material/RecordVoiceOverOutlined';
 export default function Navbar() {
   const changeLanguage = () => {
     const lan=i18n.language === 'en' ? 'ar' : 'en';
@@ -48,55 +49,68 @@ export default function Navbar() {
   return (
     <Box sx={{position:'sticky',top:0,zIndex:100,}}>
     <Box   sx={{flexGrow:1, display: 'flex', justifyContent: 'space-between', alignItems: 'center',mx:'auto', py:'10px',px:10, backgroundColor: mode === 'light' ? '#F4F2FC' : 'black', color: mode === 'light' ? '#000' : '#fff' }}>
-      <IconButton  onClick={toggleDrawer(true)} sx={{display: {xs: 'flex', sm:'none'},}}>
+      <IconButton  onClick={toggleDrawer(true)} sx={{display: {xs: 'flex', md:'none'},}}>
         <MenuOutlinedIcon /></IconButton>
         <Drawer anchor={i18n.language === 'en' ? 'left' : 'right'} open={open} onClose={toggleDrawer(false)} >
           <Box sx={{width:250 ,height:1000, backgroundColor:mode === 'light'? '#F4F2FC' : 'black' }} role="presentation">
             <List  sx={{mt:2 , mb:'auto'}}>
-              <ListItem disablePadding  sx={{ display:'flex' , flexDirection:'column' , alignItems:'start'}}> 
-                  <ListItemButton   href='/' >
+              <ListItem disablePadding > 
+                  <ListItemButton   href='/'>
                   <ListItemIcon>
                     <HomeOutlinedIcon/>
                   </ListItemIcon>
-                  <ListItemText  primary={t('Home')}/>
+                  <Typography>{t('Home')}</Typography>
                 </ListItemButton>
               </ListItem>
 
-               <ListItem disablePadding sx={{ display:'flex' , flexDirection:'column' , alignItems:'start'}}>
+               <ListItem disablePadding >
                   <ListItemButton   href='/products' >
                   <ListItemIcon>
                     <CategoryOutlinedIcon/>
                   </ListItemIcon>
-                  <ListItemText  primary={t('Products')}/>
+                  <Typography>{t('Products')}</Typography>
                 </ListItemButton>
               </ListItem>
 
-              <ListItem disablePadding sx={{ display:'flex' , flexDirection:'column' , alignItems:'start'}}>
+              <ListItem disablePadding >
                   <ListItemButton   href='/profile' >
                   <ListItemIcon>
                     <AccountCircleOutlinedIcon/>
                   </ListItemIcon>
-                  <ListItemText  primary={t('Profile')}/>
+                  <Typography>{t('Profile')}</Typography>
+                </ListItemButton>
+              </ListItem>
+              
+              <ListItem disablePadding >
+                  <ListItemButton   href='/aboutUs' >
+                  <ListItemIcon>
+                    <RecordVoiceOverOutlinedIcon/>
+                  </ListItemIcon>
+                  <Typography>{t('About Us')}</Typography>
                 </ListItemButton>
               </ListItem>
 
-              <ListItem disablePadding sx={{ display:'flex' , flexDirection:'column' , alignItems:'start'}}>
+              
+
+              <ListItem disablePadding >
                   <ListItemButton onClick={() => {localStorage.setItem('mode', mode === 'light' ? 'dark' : 'light'); toggleMode()}} >
                   <ListItemIcon>
                     {mode === 'light' ? <Brightness2OutlinedIcon/>:<Brightness5OutlinedIcon/>}
                   </ListItemIcon>
-                  <ListItemText  primary={mode === 'light' ?t('Dark Mode'):t('Light Mode')}/>
+                  <Typography>{mode === 'light' ?t('Dark Mode'):t('Light Mode')}</Typography>
                 </ListItemButton>
               </ListItem>
 
-              <ListItem disablePadding sx={{ display:'flex' , flexDirection:'column' , alignItems:'start'}}>
+              <ListItem disablePadding >
                   <ListItemButton  onClick={changeLanguage}>
                   <ListItemIcon>
                     <LanguageIcon />
                   </ListItemIcon>
-                  <ListItemText  primary={i18n.language === "en"? t('Arabic') : t('English')}/>
+                  <Typography>{i18n.language === "en"? t('Arabic') : t('English')}</Typography>
                 </ListItemButton>
               </ListItem>
+
+              
 
             </List>
             </Box> 
@@ -111,7 +125,7 @@ export default function Navbar() {
 </svg>
 </Button>
       <Box sx={{
-        display: {xs: 'none', sm:'flex'},
+        display: {xs: 'none', md:'flex'},
         alignItems: 'center',
         gap: 2,
       }}>
@@ -149,7 +163,23 @@ export default function Navbar() {
       backgroundColor: 'transparent',
     },
   }} >{t('Products')}</Button>
-        
+        <Button href='/aboutUs'  variant="none"  sx={{
+    
+    minWidth: 'auto',
+    px: 0,
+    pb: 0.5,         
+    borderRadius: 0.3,
+    borderBottom: '3px solid transparent',
+    textTransform: 'none',
+    fontWeight: 400,
+    fontSize: '16px',
+    lineHeight: '24px',
+    '&:hover': {
+      color: '#24389C',
+      borderBottom: '3px solid #24389C',
+      backgroundColor: 'transparent',
+    },
+  }} >{t('About Us')}</Button>
       </Box>
       <Box sx={{
         display: 'flex',
@@ -157,12 +187,12 @@ export default function Navbar() {
         gap: 0.5,
       }}>
       <IconButton onClick={changeLanguage} aria-label="change language" sx={{
-        display: {xs: 'none', sm:'flex'},
+        display: {xs: 'none', md:'flex'},
       }}>
         <LanguageIcon />
       </IconButton>
       <IconButton sx={{
-        display: {xs: 'none', sm:'flex'},
+        display: {xs: 'none', md:'flex'},
       }} onClick={() => {
         localStorage.setItem('mode', mode === 'light' ? 'dark' : 'light');
         toggleMode()
@@ -176,7 +206,7 @@ export default function Navbar() {
             <ShoppingCartOutlinedIcon />
           </IconButton>
           <IconButton href="/profile" sx={{
-            display: {xs: 'none', sm:'flex'},
+            display: {xs: 'none', md:'flex'},
           }}>
             <AccountCircleOutlinedIcon />
           </IconButton>

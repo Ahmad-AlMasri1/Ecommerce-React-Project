@@ -14,6 +14,7 @@ import ProfileInfo from "./pages/profile/ProfileInfo";
 import ProfileOrders from "./pages/profile/ProfileOrders";
 import ForgotPassword from "./pages/forgotPassowrd/ForgotPassword";
 import ResetPassword from "./pages/resetPassword/ResetPassword";
+import AboutUs from "./pages/aboutus/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
         ,{
             path:"reset",
             element:<ResetPassword />
+        }
+        ,{
+            path:"aboutUs",
+            element:<AboutUs />
         }
         
     ]

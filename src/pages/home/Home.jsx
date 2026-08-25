@@ -56,7 +56,7 @@ export default function Home() {
         }}>
           <Typography sx={{color:'#24389C' , fontSize:'14px' , fontWeight:700 ,}}>{t('EXCLUSIVE PARTNERSHIP')}</Typography>
           <Typography sx={{fontSize:'48px' , fontWeight:400}}>{t('The Winter Collection')}</Typography>
-          <Typography color='primary' sx={{fontSize:'16px' , fontWeight:400}}>{t("Discover our exclusive collaboration featuring premium materials and timeless design perfect for the season.")}</Typography>
+          <Typography  sx={{fontSize:'16px' , fontWeight:400}}>{t("Discover our exclusive collaboration featuring premium materials and timeless design perfect for the season.")}</Typography>
           <Button href='/products' variant='contained' sx={{backgroundColor:'#24389C',display:'flex' , px:'25px', py:'7px',width: 'fit-content' , borderRadius:3 , textTransform: 'none'}}>
           {t('Shop the Collection') } 
         </Button>

@@ -135,6 +135,9 @@ i18n
             "The Winter Collection":"The Winter Collection",
             "Discover our exclusive collaboration featuring premium materials and timeless design perfect for the season.":"Discover our exclusive collaboration featuring premium materials and timeless design perfect for the season.",
             "Shop the Collection":"Shop the Collection",
+            "About Us":"About Us",
+            "Redefining Modern Commerce":"Redefining Modern Commerce",
+            "We believe in creating seamless, intuitive, and beautiful shopping experiences that empower both creators and consumers in the digital age.":"We believe in creating seamless, intuitive, and beautiful shopping experiences that empower both creators and consumers in the digital age.",
           }
         },
         ar: {
@@ -261,6 +264,11 @@ i18n
             "The Winter Collection":"مجموعة الشتاء",
             "Discover our exclusive collaboration featuring premium materials and timeless design perfect for the season.":"اكتشفوا تعاوننا الحصري الذي يتميز بمواد فاخرة وتصميم خالد مثالي لهذا الموسم.",
             "Shop the Collection":"تسوق المجموعة",
+            "About Us":"نبذة عنا",
+            "Redefining Modern Commerce":"إعادة تعريف التجارة الحديثة",
+            "We believe in creating seamless, intuitive, and beautiful shopping experiences that empower both creators and consumers in the digital age.":"نحن نؤمن بإنتاج تجارب تسوق سلسة وبديهية وجميلة تمكّن كلاً من المبدعين والمستهلكين في العصر الرقمي.",
+          
+
           }
         }
     },
