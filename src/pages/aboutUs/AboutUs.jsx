@@ -2,6 +2,9 @@ import React from 'react'
 import { Box, Container, Typography , Button, Grid } from '@mui/material';
 import useThemeStore from '../../store/useThemeStore';
 import { useTranslation } from 'react-i18next';
+import SpaOutlinedIcon from '@mui/icons-material/SpaOutlined';
+import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
+import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 export default function AboutUs() {
   const {mode, toggleMode} = useThemeStore();
     const { t } = useTranslation();
@@ -61,7 +64,43 @@ export default function AboutUs() {
         
     </Grid>    
     </Container>
+    {/* Core Values */}
+    <Container>
+        <Typography sx={{fontSize:'48px' , color:'#24389C',mb:1,textAlign:'center'}}>{t('Core Values')}</Typography>
+        <Typography  sx={{fontSize:"16px",color:mode === 'dark' ? '#ffffff' : '#454652',textAlign:'center'}}>{t('The principles that guide our every decision.')}</Typography>
 
+        <Grid container spacing={2} sx={{my:2 , justifyContent:'center'}} >
+            <Grid size={{xs:6 , sm:4}} sx={{display:'flex' , flexDirection:'column' , gap:2 , borderRadius:3 , boxShadow:3 , backgroundColor: mode === 'light' ? '#F4F2FC' : '#1A1B22',p:3 , border:'1px solid rgba(197, 197, 212, 0.30)',
+                backgroundImage: mode === 'light' 
+        ? 'radial-gradient(circle at top right, rgba(63, 81, 181, 0.20) 20%, transparent 60%)'
+        : 'radial-gradient(circle at top right, rgba(63, 81, 181, 0.20) 15%, transparent 50%)',       
+            }}>
+                <SpaOutlinedIcon sx={{color:'#24389C'}}/>
+                <Typography sx={{fontSize:{xs:'12px',md:'20px'}, fontWeight:500}}>{t('Sustainability')}</Typography>
+                <Typography sx={{fontSize:{xs:'10px',md:'14px'}, fontWeight:400}}>{t("We are committed to reducing our footprint. From eco-friendly packaging to sustainable sourcing, we prioritize the planet in our operations.")}</Typography>
+            </Grid>
+            <Grid size={{xs:6 , sm:4}} sx={{display:'flex' , flexDirection:'column' , gap:2 , borderRadius:3 , boxShadow:3 , backgroundColor: mode === 'light' ? '#F4F2FC' : '#1A1B22',p:3 , border:'1px solid rgba(197, 197, 212, 0.30)',
+           backgroundImage: mode === 'light' 
+        ? 'radial-gradient(circle at top right, rgba(253, 192, 3, 0.20) 20%, transparent 60%)'
+        : 'radial-gradient(circle at top right, rgba(253, 192, 3, 0.20) 15%, transparent 50%)',
+            }}>
+                <VerifiedOutlinedIcon sx={{color:'#785900'}}/>
+                <Typography sx={{fontSize:{xs:'12px',md:'20px'}, fontWeight:500}}>{t('Uncompromising Quality')}</Typography>
+                <Typography sx={{fontSize:{xs:'10px',md:'14px'}, fontWeight:400}}>{t("We believe in building things that last. Every component, every line of code, and every product interaction is crafted with meticulous attention to detail.")}</Typography>
+            </Grid>
+            <Grid size={{xs:6 , sm:4}} sx={{display:'flex' , flexDirection:'column' , gap:2 , borderRadius:3 , boxShadow:3 , backgroundColor: mode === 'light' ? '#F4F2FC' : '#1A1B22',p:3 , border:'1px solid rgba(197, 197, 212, 0.30)',
+                backgroundImage: mode === 'light' 
+        ? 'radial-gradient(circle at top right, rgba(143, 71, 0, 0.20) 20%, transparent 60%)'
+        : 'radial-gradient(circle at top right, rgba(143, 71, 0, 0.20) 15%, transparent 50%)',
+            }}>
+                <GroupsOutlinedIcon sx={{color:'#6C3400'}}/>
+                <Typography sx={{fontSize:{xs:'12px',md:'20px'}, fontWeight:500}}>{t('Customer First')}</Typography>
+                <Typography sx={{fontSize:{xs:'10px',md:'14px'}, fontWeight:400}}>{t("Our design philosophy centers entirely around the user. We strive to create frictionless, intuitive experiences that anticipate and resolve needs.")}</Typography>
+            </Grid>
+        </Grid>
+    
+    
+    </Container>
 
     </>
   )

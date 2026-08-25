@@ -141,7 +141,12 @@ i18n
             "Our Story":"Our Story", 
             "Founded in 2024, ShopModern began with a simple idea: that corporate commerce doesn't have to be clinical. We saw a gap between high-end design principles and everyday e-commerce utility. Our vision was to bridge that gap by building a platform that marries aesthetic elegance with uncompromised functionality.":"Founded in 2024, ShopModern began with a simple idea: that corporate commerce doesn't have to be clinical. We saw a gap between high-end design principles and everyday e-commerce utility. Our vision was to bridge that gap by building a platform that marries aesthetic elegance with uncompromised functionality.", 
             "What started as a small team of designers and engineers has grown into a global community dedicated to pushing the boundaries of what a modern storefront can be. We prioritize clean architecture, logical user flows, and an unwavering commitment to quality.":"What started as a small team of designers and engineers has grown into a global community dedicated to pushing the boundaries of what a modern storefront can be. We prioritize clean architecture, logical user flows, and an unwavering commitment to quality.", 
-          
+            "Sustainability":"Sustainability",
+            "Uncompromising Quality":"Uncompromising Quality",
+            "Customer First":"Customer First",
+            "We are committed to reducing our footprint. From eco-friendly packaging to sustainable sourcing, we prioritize the planet in our operations.":"We are committed to reducing our footprint. From eco-friendly packaging to sustainable sourcing, we prioritize the planet in our operations.",
+            "We believe in building things that last. Every component, every line of code, and every product interaction is crafted with meticulous attention to detail.":"We believe in building things that last. Every component, every line of code, and every product interaction is crafted with meticulous attention to detail.",
+            "Our design philosophy centers entirely around the user. We strive to create frictionless, intuitive experiences that anticipate and resolve needs.":"Our design philosophy centers entirely around the user. We strive to create frictionless, intuitive experiences that anticipate and resolve needs.",
           }
         },
         ar: {
@@ -274,7 +279,13 @@ i18n
             "Our Story":"قصتنا", 
             "Founded in 2024, ShopModern began with a simple idea: that corporate commerce doesn't have to be clinical. We saw a gap between high-end design principles and everyday e-commerce utility. Our vision was to bridge that gap by building a platform that marries aesthetic elegance with uncompromised functionality.":"انطلقت شركة ShopModern عام 2024 بفكرة بسيطة: أن التجارة الإلكترونية لا يجب أن تكون جامدة. لاحظنا وجود فجوة بين مبادئ التصميم الراقي وسهولة استخدام التجارة الإلكترونية اليومية. تمثلت رؤيتنا في سد هذه الفجوة من خلال بناء منصة تجمع بين الأناقة الجمالية والوظائف العملية المتكاملة.", 
             "What started as a small team of designers and engineers has grown into a global community dedicated to pushing the boundaries of what a modern storefront can be. We prioritize clean architecture, logical user flows, and an unwavering commitment to quality.":"ما بدأ كفريق صغير من المصممين والمهندسين، نما ليصبح مجتمعًا عالميًا ملتزمًا بتوسيع آفاق مفهوم واجهة المتجر الحديثة. نولي أهمية قصوى للتصميم المعماري النظيف، وسلاسة تجربة المستخدم، والتزامنا الراسخ بالجودة.", 
-            
+            "Sustainability":"الاستدامة",
+            "Uncompromising Quality":"جودة لا تقبل المساومة",
+            "Customer First":"العميل أولا",
+            "We are committed to reducing our footprint. From eco-friendly packaging to sustainable sourcing, we prioritize the planet in our operations.":"نحن ملتزمون بتقليل أثرنا البيئي. بدءًا من التغليف الصديق للبيئة وصولًا إلى المصادر المستدامة، نولي أهمية قصوى لكوكب الأرض في عملياتنا.",
+            "We believe in building things that last. Every component, every line of code, and every product interaction is crafted with meticulous attention to detail.":"نحن نؤمن ببناء أشياء تدوم. كل مكون، وكل سطر من التعليمات البرمجية، وكل تفاعل مع المنتج يتم تصميمه بعناية فائقة بالتفاصيل.",
+            "Our design philosophy centers entirely around the user. We strive to create frictionless, intuitive experiences that anticipate and resolve needs.":"تتمحور فلسفة التصميم لدينا بالكامل حول المستخدم. نسعى جاهدين لخلق تجارب سلسة وبديهية تستبق الاحتياجات وتلبيها.",
+          
 
           }
         }
