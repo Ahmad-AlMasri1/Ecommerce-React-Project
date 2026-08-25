@@ -14,7 +14,7 @@ import ProfileInfo from "./pages/profile/ProfileInfo";
 import ProfileOrders from "./pages/profile/ProfileOrders";
 import ForgotPassword from "./pages/forgotPassowrd/ForgotPassword";
 import ResetPassword from "./pages/resetPassword/ResetPassword";
-import AboutUs from "./pages/aboutus/AboutUs";
+import AboutUs from "./pages/aboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {

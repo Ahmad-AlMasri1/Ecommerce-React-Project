@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React from 'react'
-import axiosInstance from '../api/axiosInstance';
+import axiosInstance from '../api/axiosInstance.js';
 import i18n from '../i18next.jsx'
 export default function useProduct({sortBy , order , min , max , byCategory}) {
   const getProduct = async()=>{
