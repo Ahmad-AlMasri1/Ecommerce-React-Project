@@ -152,7 +152,10 @@ i18n
             "Founder & CEO":"Founder & CEO", 
             "Head of Design":"Head of Design", 
             "Lead Engineer":"Lead Engineer", 
-            "Marketing Director":"Marketing Director",   
+            "Marketing Director":"Marketing Director", 
+            "Happy Customers":"Happy Customers",
+            "Recycled Packaging":"Recycled Packaging",  
+            "Countries Served":"Countries Served",    
           }
         },
         ar: {
@@ -297,6 +300,9 @@ i18n
             "Head of Design":"رئيسة قسم التصميم", 
             "Lead Engineer":"قائدة فريق الهندسة", 
             "Marketing Director":"مدير التسويق",   
+            "Happy Customers":"عملاء سعداء",
+            "Recycled Packaging":"التعبئة والتغليف المعاد تدويرها",  
+            "Countries Served":"الدول المخدومة", 
 
           }
         }

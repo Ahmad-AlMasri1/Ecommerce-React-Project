@@ -151,7 +151,31 @@ export default function AboutUs() {
         </Grid>
     
     
-    </Container>       
+    </Container>
+
+
+
+     {/* Store statistics */}       
+    <Container>       
+    <Grid container sx={{ py:4 ,my:10,mx:4, display:'flex' , alignItems:'center' , gap:{xs:5, md:0} , backgroundColor:'#24389C' , borderRadius:3 , boxShadow:3 , justifyContent:'center'}}>
+      <Grid size={{xs:12,sm:4}} sx={{ display:'flex' , flexDirection : 'column' , gap:1 ,  alignItems:'center'}}>
+         
+          <Typography sx={{fontSize:'60px' , fontWeight:700 , color:'#FFDF9E'}} noWrap>10k+</Typography>
+          <Typography sx={{fontSize:'14px' , fontWeight:400, color:'#BAC3FF'}} noWrap>{t('Happy Customers')}</Typography>
+      </Grid>
+       <Grid size={{xs:12,sm:4}} sx={{ display:'flex' , flexDirection : 'column' , gap:1 ,  alignItems:'center' ,borderLeft: {md:'1px solid rgba(186, 195, 255, 0.30)'} , borderRight: {md:'1px solid rgba(186, 195, 255, 0.30)'} }}>
+          
+          <Typography sx={{fontSize:'60px' , fontWeight:700 , color:'#FFDF9E'}} noWrap>100%</Typography>
+          <Typography sx={{fontSize:'14px' , fontWeight:400, color:'#BAC3FF'}} noWrap>{t('Recycled Packaging')}</Typography>
+      </Grid>
+       <Grid size={4} sx={{ display:'flex' , flexDirection : 'column' , gap:1 ,  alignItems:'center' }}>
+        
+        <Typography sx={{fontSize:'60px' , fontWeight:700 , color:'#FFDF9E'}} noWrap>50+</Typography>
+        <Typography sx={{fontSize:'14px' , fontWeight:400, color:'#BAC3FF'}} noWrap>{t('Countries Served')}</Typography>
+      </Grid>
+        
+    </Grid>
+    </Container>        
     </>
   )
 }
