@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box , TextField, Typography , Button, CircularProgress, Container} from '@mui/material'
+import { Box , TextField, Typography , Button, CircularProgress, Container , OutlinedInput ,InputAdornment , IconButton , InputLabel ,FormControl } from '@mui/material'
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { yupResolver } from "@hookform/resolvers/yup"
@@ -19,6 +19,8 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import i18n from '../../i18next';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import authAxiosInstance from '../../api/authAxiosInstance';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 export default function ResetPassword() {
   const setToken = useAuthStore((state) => state.setToken);
           const navigate = useNavigate();
@@ -38,6 +40,16 @@ export default function ResetPassword() {
               setServerErrors(err.response.data.message);
             }
           }
+          const [showPassword , setShowPassword] = useState(false);
+                      const handleClickShowPassword = () => setShowPassword((show) => !show);
+                      const handleMouseDownPassword = (event) => {
+                        event.preventDefault();
+                      };
+          
+                      const handleMouseUpPassword = (event) => {
+                        event.preventDefault();
+                      };
+                        const outlinedPasswordId = React.useId();
 
   return (
     
@@ -47,9 +59,48 @@ export default function ResetPassword() {
         <LockResetIcon sx={{fontSize:'90px', color:'#24389C'}}/>
       <Typography variant='h4' component="h1" sx={{mb:2}}>{t('Change Password')}</Typography>
       <Typography color='primary' sx={{fontSize:'14px' ,fontWeight:400, mt:-2}}>{t('Please enter your new password below to secure your account.')}</Typography>
-      <TextField sx={{width:'90%'}} fullWidth {...register("code")} label={t('Code')} variant='outlined' error={errors.code} helperText={errors.code?.message}/>
-      <TextField sx={{width:'90%'}} fullWidth {...register("newPassword")} label={t('New Password')} variant='outlined' error={errors.newPassword} helperText={errors.newPassword?.message}/>
-      <TextField sx={{width:'90%'}} fullWidth {...register("email")} label={t('Email Address')} variant='outlined' error={errors.email} helperText={errors.email?.message}/>
+      <TextField sx={{width:'85%'}} fullWidth {...register("code")} label={t('Code')} variant='outlined' error={errors.code} helperText={errors.code?.message}/>
+      <FormControl sx={{ width:'85%'}} variant="outlined">
+      
+      <InputLabel htmlFor={`${outlinedPasswordId}-input`}>{t('New Password')}</InputLabel>
+      <OutlinedInput
+      id={`${outlinedPasswordId}-input`}
+      endAdornment={
+              <InputAdornment position="relative">
+                <IconButton
+                sx={{
+                    position:'absolute',
+                    mr:i18n.language === 'ar' ? '10px' : '0',
+                    ml:i18n.language === 'en' ? '16px' : '0',
+                    border:'2px solid',
+                    p:'10px',
+                    backgroundColor:showPassword?'#24389cb6':'#24389C'
+                  }}
+                  
+                  aria-label={
+                    showPassword ? 'hide the password' : 'display the password'
+                  }
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  onMouseUp={handleMouseUpPassword}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                </IconButton>
+              </InputAdornment>
+            } fullWidth  type={showPassword ? 'text' : 'password'} {...register("newPassword")} label={t('NewPassword')}  variant='outlined' error={errors.Password} helperText={errors?.Password?.message}
+            
+            />
+      
+      </FormControl>
+      
+
+
+      
+      
+      
+      
+      <TextField sx={{width:'85%'}} fullWidth {...register("email")} label={t('Email Address')} variant='outlined' error={errors.email} helperText={errors.email?.message}/>
       <Typography color='error'>{serverErrors}</Typography>
       <Box onSubmit={handleSubmit(ResetForm)} component="form" sx={{marginTop:2 , display:'flex' , gap:3 , flexDirection:'column'}}>
           <Button  variant="contained" type="submit" disabled={isSubmitting} sx={{backgroundColor:'#24389C', textTransform:'none' , py:1.5 , px:10 , borderRadius:2}}>
